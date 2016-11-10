@@ -12,7 +12,7 @@ public class Language {
 	}
 	
 	public static void tellPlayerWon(Player p) {
-		System.out.println(p.PlayerName+" WON!!");
+		System.out.println(" WON!!");
 		
 	}
 
