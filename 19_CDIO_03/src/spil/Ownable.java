@@ -1,6 +1,6 @@
 package spil;
 
-public class Ownable {
+public class Ownable extends Field {
 
 }
 

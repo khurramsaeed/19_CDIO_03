@@ -1,6 +1,6 @@
 package spil;
 
-public class Territory {
+public class Territory extends Ownable {
 
 }
 

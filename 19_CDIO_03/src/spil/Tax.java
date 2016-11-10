@@ -1,6 +1,6 @@
 package spil;
 
-public class Tax {
+public class Tax extends Field {
 
 }
 

@@ -1,6 +1,6 @@
 package spil;
 
-public class Fleet {
+public class Fleet extends Ownable {
 
 }
 

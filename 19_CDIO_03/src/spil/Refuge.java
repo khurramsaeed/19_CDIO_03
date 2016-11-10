@@ -1,6 +1,6 @@
 package spil;
 
-public class Refuge {
+public class Refuge extends Field {
 
 }
 

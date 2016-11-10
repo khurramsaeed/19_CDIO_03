@@ -1,6 +1,6 @@
 package spil;
 
-public class laborCamp {
+public class laborCamp extends Ownable {
 
 }
 
