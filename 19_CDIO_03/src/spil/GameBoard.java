@@ -6,7 +6,7 @@ public class GameBoard {
 	
 	public GameBoard() {
 		
-		field[1]
-		field[2]		
+//		field[1] = (100, "hej", "hej", );
+//		field[2]		
 	}
 }
