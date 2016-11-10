@@ -2,16 +2,33 @@ package spil;
 
 public class Player {
 	
-	Bank bank;
-	String playerName;
-	int playerID;
-	
+	private Account account;
+	private String playerNumber;
+	private boolean lost;
+	private int quantityOfFleets;
+	private int quantityOfLaborCamps;
+	private int money;
 
-		public Player(){
-			this(2);
-		}
+
+	 public Player() {
 		
-		public Player(int playerID) { 
-			this.playerID = playerID;
-		}
+		account = new Account(30000);
+		lost = false;
+		quantityOfFleets = 0;
+		quantityOfLaborCamps = 0;
+		
 	}
+
+
+	public int getMoney() {
+		return money;
+	}
+	
+	public int getAccountBalance() {
+		money = account.getAccountBalance();
+				return money;
+	}
+
+
+
+}
