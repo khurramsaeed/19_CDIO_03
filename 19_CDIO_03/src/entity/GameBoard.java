@@ -18,7 +18,6 @@ public class GameBoard {
 	field[9] = new Territory("Palace Gates", 2600, 5500);
 	field[10] = new Territory("Tower", 3200, 6000);
 	field[11] = new Territory("Castle", 4000, 8000);
-	
 	field[12] = new Refuge("Walled City", 5000);
 	field[13] = new Refuge("Monastary", 500);
 	field[14] = new LaborCamp("Huts in the mountain", 2500);

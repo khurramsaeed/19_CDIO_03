@@ -2,7 +2,7 @@ package entity;
 
 public class LaborCamp extends Ownable {
 	private int startRent = 100;
-	private int fieldSum;
+	private int cupSum;
 	
 	public LaborCamp() {
 		super();
