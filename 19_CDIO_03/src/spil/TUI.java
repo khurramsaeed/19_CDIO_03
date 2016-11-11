@@ -2,12 +2,12 @@ package spil;
 
 import java.util.Scanner;
 
-public class Language {
+public class TUI {
 	
 	GameController game = new GameController();
 	static Scanner sc = new Scanner(System.in); 
 	
-	public Language(){
+	public TUI(){
 			
 	}
 	
