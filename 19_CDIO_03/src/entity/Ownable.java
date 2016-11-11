@@ -30,7 +30,7 @@ public class Ownable extends Field {
 
 	public void buyField(Player player){
 		owner = player;
-		owner.addBalance(-price);
+		//owner.addBalance(-price);
 		isOwned = true;
 	}
 	

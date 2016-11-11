@@ -6,7 +6,7 @@ public class GameBoard {
 	
 	public GameBoard() {
 		
-	field[0] = new Start("Start");		
+	//field[0] = new Start("Start");		
 	field[1] = new Territory("Tribe Encampment", 100, 1000);
 	field[2] = new Territory("Crater", 300, 1500);
 	field[3] = new Territory("Mountain", 500, 2000);
@@ -21,15 +21,14 @@ public class GameBoard {
 	
 	field[12] = new Refuge("Walled City", 5000);
 	field[13] = new Refuge("Monastary", 500);
-	field[14] = new LaborCamp("Huts in the mountain", 100, 1000);
-	field[15] = new LaborCamp("The pit", 100, 1000);
-	field[16] = new Territory("Navn", 100, 1000);
-	field[17] = new Territory("Navn", 100, 1000);
-	field[19] = new Territory("Navn", 100, 1000);
-	field[19] = new Territory("Navn", 100, 1000);
-	field[20] = new Territory("Navn", 100, 1000);
-	field[21] = new Territory("Navn", 100, 1000);
-	field[22] = new Territory("Navn", 100, 1000);
+	field[14] = new LaborCamp("Huts in the mountain", 2500);
+	field[15] = new LaborCamp("The pit", 2500);
+	field[16] = new Tax("Goldmine", 2000);
+	field[17] = new Tax("Caravan", 4000);
+	field[19] = new Fleet("Second Sail", 500, 4000);
+	field[19] = new Fleet("Sea Grover", 500, 4000);
+	field[20] = new Fleet("The Buccaneers", 500, 4000);
+	field[21] = new Fleet("Privateer armade", 500, 4000);
 
 	}
 }
