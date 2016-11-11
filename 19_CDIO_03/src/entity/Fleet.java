@@ -7,8 +7,8 @@ public class Fleet extends Ownable {
 	int Rent_3 = 2000;
 	int Rent_4 = 4000;
 	
-	public Fleet(){
-		
+	public Fleet(String name, int price){
+		super(name, price);
 	}
 }
 
