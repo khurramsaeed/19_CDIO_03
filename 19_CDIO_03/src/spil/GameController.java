@@ -6,7 +6,6 @@ package spil;
  * @author Gruppe 19
  * @version: 1.0
  * 
- * 
  */
 
 
