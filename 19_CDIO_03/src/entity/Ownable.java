@@ -1,4 +1,4 @@
-package spil;
+package entity;
 
 public class Ownable extends Field {
 

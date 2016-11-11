@@ -1,6 +1,11 @@
-package spil;
+package boundaries;
+
+
+import controller.GameController;
+import entity.*;
 
 import java.util.Scanner;
+
 
 public class TUI {
 	
