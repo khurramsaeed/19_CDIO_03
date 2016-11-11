@@ -2,6 +2,10 @@ package entity;
 
 public abstract class Field {
 	
+	public Field(){
+		
+	}
+	
 	protected String name;
 	
 	public Field(String name){

@@ -12,15 +12,32 @@ public class Ownable extends Field {
 		this.price = price;
 	}
 	
+	public Ownable() {
+		super();
+	}
+
 	public int getRent(){
 		return 0;
+	}
+	
+	public void setPrice(){
+		this.price = price;
+	}
+	
+	public int getPrice(){
+		return price;
 	}
 
 	public void buyField(Player player){
 		owner = player;
-		owner.addBalance;
+		owner.addBalance(-price);
 		isOwned = true;
 	}
+	
+	public Player getOwner() {
+		return owner;
+	}
+	
 	@Override
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
