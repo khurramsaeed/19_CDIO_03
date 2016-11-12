@@ -6,19 +6,14 @@ public abstract class Ownable extends Field {
 
 	protected boolean isOwned = false;
 	protected boolean buyField;
-	private int price;
-	private Player owner;
+	protected int price;
+	protected Player owner;
 	
 	public Ownable(String name, int price){
 		super(name);
 		this.price = price;
 	}
-	
-	public Ownable() {
-		super();
-	}
-
-	
+		
 	public void setPrice(){
 		this.price = price;
 	}
@@ -29,7 +24,7 @@ public abstract class Ownable extends Field {
 
 	protected void buyField(Player player){
 		owner = player;
-		owner.addFortune(-price);
+		owner.setFortune(-price);
 		isOwned = true;
 	}
 	
@@ -43,9 +38,9 @@ public abstract class Ownable extends Field {
 	public void landOnField(Player player) {
 		
 		if(isOwned == true){
-			player.addFortune(-getRent());
-			if(owner.hasLost != true){
-				owner.addFortune(getRent());
+			player.setFortune(-getRent());
+			if(owner.setPlayerHasLost(true)){
+				owner.setFortune(getRent());
 			}
 			 
 			else if(TUI.sc.nextInt() == 1){

@@ -28,8 +28,9 @@ public class Player {
 	
 	}
 	
-	public void setPlayerHasLost(boolean lost) {
+	public boolean setPlayerHasLost(boolean lost) {
 		hasLost = lost;
+		return lost;
 		
 	}
 		

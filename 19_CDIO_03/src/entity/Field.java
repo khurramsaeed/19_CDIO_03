@@ -2,11 +2,8 @@ package entity;
 
 public abstract class Field {
 	
-	public Field(){
-		
-	}
-	
 	protected String name;
+	
 	
 	public Field(String name){
 		this.name = name;
@@ -22,11 +19,11 @@ public abstract class Field {
 	
 	public abstract void landOnField(Player player);
 	
-	public abstract int getRent();
+	//public abstract int getRent();
 	
-	public boolean isOwned(){
-		return false;
-	}
+//	public boolean isOwned(){
+//		return false;
+//	}
 	
 }
   

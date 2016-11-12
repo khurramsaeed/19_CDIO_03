@@ -11,6 +11,5 @@ public class Account {
 	public int getBalance(){
 		return Balance;
 	}
-
 }
  

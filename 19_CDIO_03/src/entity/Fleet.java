@@ -2,10 +2,10 @@ package entity;
 
 public class Fleet extends Ownable { 
 	
-	int Rent_1 = 500;
-	int Rent_2 = 1000;
-	int Rent_3 = 2000;
-	int Rent_4 = 4000;
+	private int Rent_1 = 500;
+	private int Rent_2 = 1000;
+	private int Rent_3 = 2000;
+	private int Rent_4 = 4000;
 	private int rent;
 
 	public Fleet(String name, int rent, int price){
