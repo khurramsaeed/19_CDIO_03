@@ -13,4 +13,4 @@ public class Territory extends Ownable {
 
 	
 	
-}
+} 

@@ -49,7 +49,7 @@ public class Ownable extends Field {
 			if(owner.lost != true){
 				owner.addFortune(getRent());
 			}
-			
+			 
 			else if(TUI.sc.nextInt() == 1){
 				
 				buyField(player);

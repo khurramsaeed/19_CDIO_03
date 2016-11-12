@@ -25,7 +25,7 @@ public class Player {
 		return account.getBalance();
 	
 	}
-	
+	 
 	public void setPlayerHasLost(boolean lost) {
 		
 		hasLost = lost;

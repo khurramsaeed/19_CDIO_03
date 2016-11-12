@@ -29,4 +29,4 @@ public class GameBoard {
 	field[21] = new Fleet("Privateer armade", 500, 4000);
 
 	}
-}
+} 
