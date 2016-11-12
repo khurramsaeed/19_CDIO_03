@@ -1,5 +1,7 @@
 package entity;
 
+import boundaries.TUI;
+
 public class Ownable extends Field {
 
 	protected boolean isOwned = false;
@@ -17,7 +19,7 @@ public class Ownable extends Field {
 	}
 
 	public int getRent(){
-		return 0;
+		return rent;
 	}
 	
 	public void setPrice(){
@@ -28,9 +30,9 @@ public class Ownable extends Field {
 		return price;
 	}
 
-	public void buyField(Player player){
+	protected void buyField(Player player){
 		owner = player;
-		//owner.addBalance(-price);
+		owner.addBalance(-price);
 		isOwned = true;
 	}
 	
@@ -38,9 +40,27 @@ public class Ownable extends Field {
 		return owner;
 	}
 	
+
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
+		
+		if(isOwned == true){
+			player.addFortune(-getRent());
+			if(owner.lost != true){
+				owner.addFortune(getRent());
+			}
+			
+			else if(TUI.sc.nextInt() == 1){
+				
+				buyField(player);
+				buyField = false;
+				
+			}
+			
+			else if(TUI.sc.nextInt() == 2){
+				return;
+			}
+		}
 		
 	}
 	

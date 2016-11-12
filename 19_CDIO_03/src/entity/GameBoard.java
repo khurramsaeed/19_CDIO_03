@@ -2,11 +2,10 @@ package entity;
 
 public class GameBoard {
 	
-	Field[] field = new Field[22]; 
+	Field[] field = new Field[21]; 
 	
 	public GameBoard() {
-		
-	//field[0] = new Start("Start");		
+				
 	field[1] = new Territory("Tribe Encampment", 100, 1000);
 	field[2] = new Territory("Crater", 300, 1500);
 	field[3] = new Territory("Mountain", 500, 2000);

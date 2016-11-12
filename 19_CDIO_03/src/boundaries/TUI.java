@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class TUI {
 	
 	GameController game = new GameController();
-	static Scanner sc = new Scanner(System.in); 
+	public static Scanner sc = new Scanner(System.in); 
 	
 	public TUI(){
 			

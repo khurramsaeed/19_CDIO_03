@@ -1,6 +1,7 @@
 package entity;
 
 public class LaborCamp extends Ownable {
+	
 	private int startRent = 100;
 	private int cupSum;
 	
@@ -13,9 +14,9 @@ public class LaborCamp extends Ownable {
 		
 	}
 	
-	public int getSum(int fieldSum){
-		this.fieldSum = fieldSum;
-		int rent = startRent * this.fieldSum;
+	public int getSum(int cupSum){
+		this.cupSum = cupSum;
+		int rent = startRent * this.cupSum;
 		return rent;
 	}
 
