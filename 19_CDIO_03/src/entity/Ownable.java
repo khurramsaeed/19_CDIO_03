@@ -29,7 +29,7 @@ public abstract class Ownable extends Field {
 
 	protected void buyField(Player player){
 		owner = player;
-		owner.addFortune(-price);
+		owner.getFortune(-price);
 		isOwned = true;
 	}
 	
@@ -43,9 +43,9 @@ public abstract class Ownable extends Field {
 	public void landOnField(Player player) {
 		
 		if(isOwned == true){
-			player.addFortune(-getRent());
+			player.getFortune(-getRent());
 			if(owner.hasLost != true){
-				owner.addFortune(getRent());
+				owner.getFortune(getRent());
 			}
 			 
 			else if(TUI.sc.nextInt() == 1){

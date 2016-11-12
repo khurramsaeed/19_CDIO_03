@@ -29,4 +29,8 @@ public class GameBoard {
 	field[21] = new Fleet("Privateer armade", 500, 4000);
 
 	}
+	
+	public int getFieldArrayLength(){
+		return field.length;
+	}
 } 
