@@ -5,7 +5,7 @@ public class Player {
 	private String playerName;
 	private Account account;
 	private boolean hasLost;
-	private boolean payD;
+	private boolean etEllerAndet; //om player vil betale fast beløb eller procent: se felter
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
 	private int fortune;
