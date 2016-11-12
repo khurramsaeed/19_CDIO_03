@@ -1,4 +1,4 @@
-package spil;
+package entity;
 
 public class Account {
 	
@@ -8,8 +8,9 @@ public class Account {
 			this.Balance = balance;
 	}
 	
-	public int getAccountBalance(){
+	public int getBalance(){
 		return Balance;
 	}
 
 }
+ 

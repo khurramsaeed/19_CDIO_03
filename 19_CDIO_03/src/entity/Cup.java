@@ -1,10 +1,10 @@
-package spil;
+package entity;
 
 public class Cup {
 	
 	//Create object
 	//Change dice type, Dice(x)
-	Dice t1 = new Dice(6);
+	Dice t1 = new Dice();
 	Dice t2 = new Dice();
 
 	public Cup() { //Constructor
@@ -21,3 +21,4 @@ public class Cup {
 
 	}
 }
+ 

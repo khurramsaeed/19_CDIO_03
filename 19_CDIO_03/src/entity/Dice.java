@@ -1,4 +1,4 @@
-package spil;
+package entity;
 
 public class Dice {
 	private int facevalue;
@@ -19,4 +19,4 @@ public class Dice {
 		this.facevalue = (int)(Math.random()*sides) +1;
 	}
 
-}
+} 
