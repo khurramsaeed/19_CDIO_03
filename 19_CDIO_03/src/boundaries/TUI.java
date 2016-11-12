@@ -1,6 +1,7 @@
 package boundaries;
 
-
+import desktop_resources.GUI;
+import desktop_fields.Field;
 import controller.GameController;
 import entity.*;
 
@@ -10,7 +11,7 @@ import java.util.Scanner;
 public class TUI {
 	
 	GameController game = new GameController();
-	static Scanner sc = new Scanner(System.in); 
+	public static Scanner sc = new Scanner(System.in); 
 	
 	public TUI(){
 			
@@ -21,4 +22,7 @@ public class TUI {
 		
 	}
 
+
+
 }
+ 

@@ -19,4 +19,4 @@ public class Dice {
 		this.facevalue = (int)(Math.random()*sides) +1;
 	}
 
-}
+} 
