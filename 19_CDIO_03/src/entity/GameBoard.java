@@ -2,7 +2,7 @@ package entity;
 
 public class GameBoard {
 	
-	Field[] field = new Field[21]; 
+	Field[] field = new Field[22]; 
 	
 	public GameBoard() {
 				

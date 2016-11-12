@@ -19,6 +19,11 @@ public class LaborCamp extends Ownable {
 		int rent = startRent * this.cupSum;
 		return rent;
 	}
+	@Override
+	public int getRent() {
+	
+		return startRent;
+	}
 
 }
 

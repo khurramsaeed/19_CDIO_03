@@ -2,7 +2,7 @@ package entity;
 
 import boundaries.TUI;
 
-public class Ownable extends Field {
+public abstract class Ownable extends Field {
 
 	protected boolean isOwned = false;
 	protected boolean buyField;
@@ -18,9 +18,6 @@ public class Ownable extends Field {
 		super();
 	}
 
-	public int getRent(){
-		return rent;
-	}
 	
 	public void setPrice(){
 		this.price = price;
@@ -32,7 +29,7 @@ public class Ownable extends Field {
 
 	protected void buyField(Player player){
 		owner = player;
-		owner.addBalance(-price);
+		owner.addFortune(-price);
 		isOwned = true;
 	}
 	
@@ -40,13 +37,14 @@ public class Ownable extends Field {
 		return owner;
 	}
 	
-
+	public abstract int getRent();
+	
 	@Override
 	public void landOnField(Player player) {
 		
 		if(isOwned == true){
 			player.addFortune(-getRent());
-			if(owner.lost != true){
+			if(owner.hasLost != true){
 				owner.addFortune(getRent());
 			}
 			 

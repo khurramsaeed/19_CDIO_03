@@ -11,6 +11,11 @@ public class Territory extends Ownable {
 		this.rent = rent;
 	}
 
+	@Override
+	public int getRent() {		
+		return rent;
+	}
+
 	
 	
 } 
