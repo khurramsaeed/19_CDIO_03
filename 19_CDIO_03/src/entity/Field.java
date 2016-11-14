@@ -20,7 +20,7 @@ public abstract class Field {
 		this.name = name;
 	}
 	
-	public static  void landOnField(Player player);
+	public abstract void landOnField(Player player);
 	
 //	public abstract int getRent();
 //	
