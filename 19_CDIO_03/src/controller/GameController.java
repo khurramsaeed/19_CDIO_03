@@ -14,6 +14,10 @@ public class GameController {
 	public static void Launch(){
 	Player.addPlayer();
 	}
+	
+//	public static void playGame(){
+//		entity.Field.landOnField();
+//	}
 
 }
  
