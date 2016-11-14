@@ -79,10 +79,9 @@ public class Player {
 	
 	public static void addPlayer() {
 		int bruger = TUI.sc.nextInt();
-
+		ArrayList <Player> playerList = new ArrayList <Player> ();
 		
 		for (int i = 0; i < bruger; i++){
-			ArrayList <Player> playerList = new ArrayList <Player> ();
 			System.out.println("\n"+"Type the name of Player "+(i+1));
 			playerList.add(new Player(TUI.sc.next()));
 			System.out.println("Player " + (i+1)+ " is ready");
