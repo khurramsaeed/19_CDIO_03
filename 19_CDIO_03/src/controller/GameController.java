@@ -11,6 +11,7 @@ import entity.*;
 
 public class GameController {
 
+	
 	public static void Launch(){
 	Player.addPlayer();
 	}
