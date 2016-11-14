@@ -22,11 +22,11 @@ public abstract class Field {
 	
 	public abstract void landOnField(Player player);
 	
-	public abstract int getRent();
-	
-	public boolean isOwned(){
-		return false;
-	}
-	
+//	public abstract int getRent();
+//	
+//	public boolean isOwned(){
+//		return false;
+//	}
+//	
 }
   

@@ -14,8 +14,8 @@ public class Cup {
 
 	public int sum() { //Method sum, returns x+y = sum
 
-		int x = t1.getFacevalue();
-		int y = t2.getFacevalue();
+		int x = t1.getFaceValue();
+		int y = t2.getFaceValue();
 		
 		return x + y;
 

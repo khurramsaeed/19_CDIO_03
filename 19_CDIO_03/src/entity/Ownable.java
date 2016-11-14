@@ -6,8 +6,8 @@ public abstract class Ownable extends Field {
 
 	protected boolean isOwned = false;
 	protected boolean buyField;
-	private int price;
-	private Player owner;
+	protected int price;
+	protected Player owner;
 	
 	public Ownable(String name, int price){
 		super(name);
@@ -19,7 +19,7 @@ public abstract class Ownable extends Field {
 	}
 
 	//A method to change price
-	public void setPrice(){
+	public void setPrice(int price){
 		this.price = price;
 	}
 	//A method to get price
@@ -29,7 +29,7 @@ public abstract class Ownable extends Field {
 	// A method to buy a field
 	protected void buyField(Player player){
 		owner = player;
-		owner.getFortune(-price);
+		owner.setFortune(-price);
 		isOwned = true;
 	}
 	
@@ -45,9 +45,9 @@ public abstract class Ownable extends Field {
 	public void landOnField(Player player) {
 		//Check if owned if yes than get the rent price and pay
 		if(isOwned == true){
-			player.getFortune(-getRent());
-			if(owner.setPlayerHasLost(false)){
-				owner.getFortune(getRent());
+			player.setFortune(-getRent());
+			if(owner.setPlayerHasLost(true)){
+				owner.setFortune(getRent());
 			}
 			 // if free ask if u want to buy and buy
 			else if(TUI.sc.nextInt() == 1){

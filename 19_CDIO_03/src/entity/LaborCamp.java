@@ -2,8 +2,8 @@ package entity;
 
 public class LaborCamp extends Ownable {
 	
-	private int startRent = 100;
-	private int cupSum;
+	private int rentMultiplier = 100;
+	private int rent;
 	
 	public LaborCamp() {
 		super();
@@ -14,15 +14,13 @@ public class LaborCamp extends Ownable {
 		
 	}
 	
-	public int getSum(int cupSum){
-		this.cupSum = cupSum;
-		int rent = startRent * this.cupSum;
-		return rent;
+	public void setRent(int cupSum){
+		rent = rentMultiplier * cupSum;
 	}
 	@Override
 	public int getRent() {
 	
-		return startRent;
+		return rent;
 	}
 
 }
