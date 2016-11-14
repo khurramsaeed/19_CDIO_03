@@ -11,10 +11,8 @@ import entity.*;
 
 public class GameController {
 
-	public static void main(String[] args) {
-		
-	entity.Player.addPlayer();
-
+	public static void Launch(){
+	Player.addPlayer();
 	}
 
 }
