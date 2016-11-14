@@ -1,5 +1,9 @@
 package entity;
 
+import java.util.ArrayList;
+
+import boundaries.TUI;
+
 public class Player {
 	
 	private String playerName;
@@ -8,7 +12,7 @@ public class Player {
 	private boolean etEllerAndet; //om player vil betale fast beløb eller procent: se felter
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
-	private int fortune;
+	private static int fortune;
 	private int currentPosition;
 
 	 public Player(String playerName) {
@@ -39,7 +43,7 @@ public class Player {
 		
 	}
 	
-	public int getFortune(int value){
+	public static int getFortune(int value){
 		return fortune;
 	}
 	
@@ -71,6 +75,21 @@ public class Player {
 	}
 	
 }
+	
+	public static void addPlayer() {
+		int bruger = TUI.sc.nextInt();
+		ArrayList <Player> playerList = new ArrayList <Player> ();
+		
+		for (int i = 0; i < bruger; i++){
+			System.out.println("\n"+"Type the name of Player "+(i+1));
+			playerList.add(new Player(TUI.sc.next()));
+			System.out.println("Player " + (i+1)+ " is ready");
+			System.out.println("Your fortune contains "+ getFortune(i));
+			
+		}
+	
+		
+	}
 	
 	
 	}

@@ -7,13 +7,13 @@ package controller;
  * @version: 1.0
  * 
  */
-
+import entity.*;
 
 public class GameController {
 
 	public static void main(String[] args) {
 		
-	
+	entity.Player.addPlayer();
 
 	}
 

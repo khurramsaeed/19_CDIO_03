@@ -27,6 +27,6 @@ public abstract class Field {
 //	public boolean isOwned(){
 //		return false;
 //	}
-//	
+
 }
   
