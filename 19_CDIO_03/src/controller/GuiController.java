@@ -2,39 +2,45 @@ package controller;
 
 import java.awt.Color;
 
-import desktop_fields.Field;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 import entity.Cup;
 import entity.Dice;
-
+import entity.Field;
+import entity.Territory;
 import entity.Dice;
 public class GuiController {
 	
-	public void GUIField(){
-		
-		Dice d1 = new Dice();
-		Dice d2 = new Dice();
-		
-		Cup c1 = new Cup();
+	public void GUIField(Field[] fields){
 		
 		
-		Field[] fields = new Field[3];
+		desktop_fields.Field[] desktopFields = new desktop_fields.Field[3];
 		
-		fields[0] = new desktop_fields.Start.Builder()
-		.setTitle("Start")
-		.setDescription("This is the start, you will receive 30000 coins as a starting bonus")
-		.setBgColor(Color.ORANGE)
-		.build();
 		
-		fields[1] = new desktop_fields.Refuge.Builder()
-		.setTitle("Tribe Encampment")
-		.setDescription("hey")
+		desktopFields[0] = new desktop_fields.Street.Builder()
+		.setTitle(fields[1].getName())
+		.setDescription("")
+		.setSubText("Price: "+((Territory)fields[1]).getRent())
+		.setRent("Rent: "+((Territory)fields[1]).getRent())
 		.setBgColor(Color.green)
 		.build();
 		
+		desktopFields[1] = new desktop_fields.Street.Builder()
+		.setTitle("")
+		.setDescription("")
+		.setSubText("Price: 1000")
+		.setBgColor(Color.green)
+		.build();
 		
-		GUI.create(fields);
+		desktopFields[2] = new desktop_fields.Street.Builder()
+				.setTitle("Swoop")
+				.setDescription("")
+				.build();
+		
+		
+		
+		
+		GUI.create(desktopFields);
 		GUI.showMessage("");
 	}
 

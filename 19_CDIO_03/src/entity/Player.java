@@ -49,7 +49,7 @@ public class Player {
 	}
 	
 
-	public int getQuantityOfFleets() {
+	public static int getQuantityOfFleets() {
 		return quantityOfFleets;
 		
 	}
