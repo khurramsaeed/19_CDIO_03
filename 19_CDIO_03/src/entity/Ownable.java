@@ -7,8 +7,8 @@ public abstract class Ownable extends Field {
 	protected int price;
 	protected Player owner;
 
-	public Ownable(String name, int price) {
-		super(name);
+	public Ownable(String fieldName, int price) {
+		super(fieldName);
 		this.price = price;
 
 	}
@@ -25,6 +25,13 @@ public abstract class Ownable extends Field {
 		newOwner = owner;
 	}
 
+	public void landOnField(Player player) {
+		if (player.getPlayerName() != owner.getPlayerName()) {
+			player.setFortune(-getRent());
+			owner.setFortune(getRent());
+		}
+	}
+
 	public void buyField(Player buyer) {
 		if (buyer.getFortune() >= price) {
 			buyer.setFortune(getPrice());
@@ -34,31 +41,4 @@ public abstract class Ownable extends Field {
 
 	public abstract int getRent();
 
-	@Override
-	public void landOnField(Player player) {
-	}
-
 }
-
-// A Method for what happens when u land of a field
-// public void landOnField(Player player) {
-//
-// if(isOwned == true){
-// player.setFortune(-getRent());
-// if(owner.setPlayerHasLost(true)){
-// owner.setFortune(getRent());
-// }
-// // if free ask if u want to buy and buy
-// else if(TUI.sc.nextInt() == 1){
-//
-// buyField(player);
-// buyField = false;
-//
-// }
-// // player dont want to do antything that turn
-// else if(TUI.sc.nextInt() == 2){
-// return;
-// }
-// }
-//
-// }

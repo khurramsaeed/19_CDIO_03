@@ -8,8 +8,8 @@ public class Fleet extends Ownable {
 	private int Rent_4 = 4000;
 	private int rent;
 
-	public Fleet(String name, int price, int rent) {
-		super(name, price);
+	public Fleet(String fieldName, int price, int rent) {
+		super(fieldName, price);
 		this.rent = rent;
 	}
 

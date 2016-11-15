@@ -1,21 +1,22 @@
 package entity;
 
 public abstract class Field {
-	
-	protected String name;
-	
-	public Field(String name){
-		this.name = name;
+
+	protected String fieldName;
+
+	public Field(String fieldName) {
+		this.fieldName = fieldName;
 	}
-	
-	public String getName(){
-		return name;
+
+	public String getFieldName() {
+		return fieldName;
 	}
-	
-	public String toString(){
-		return name;
+
+	public String toString() {
+		return fieldName;
 	}
-	
+
 	public abstract void landOnField(Player player);
-	}
-  
+	
+	
+}

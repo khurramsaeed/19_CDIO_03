@@ -3,27 +3,23 @@ package entity;
 import java.util.ArrayList;
 
 import boundary.TUI;
+import entity.Player;
 
 public class PlayerList {
-	
-	ArrayList <Player> playerList = new ArrayList <Player> ();
-	
+
+	ArrayList<Player> playerList = new ArrayList<Player>();
+
 	public void addPlayer() {
-	int bruger = TUI.sc.nextInt();
-			
-		for (int i = 0; i < bruger; i++){
-			System.out.println("\n"+"Type the name of Player "+(i+1));
+		int bruger = TUI.sc.nextInt();
+		for (int i = 0; i < bruger; i++) {
 			playerList.add(new Player(TUI.sc.next()));
-			System.out.println("Player " + (i+1)+ " is ready");
-			System.out.println("Your fortune contains "+ Player.getFortune(i));
+			System.out.println(getPlayer(i).getFortune());
+
 		}
 	}
 
-	public Player getPlayer (int index){
+	public Player getPlayer(int index) {
 		return playerList.get(index);
-		
+
 	}
 }
-
-
-

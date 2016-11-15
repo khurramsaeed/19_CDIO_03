@@ -9,8 +9,7 @@ public class Player {
 	private String playerName;
 	private Account account;
 	private boolean hasLost;
-	private boolean etEllerAndet; // om player vil betale fast beløb eller
-									// procent: se felter
+	private boolean payAmountOrPercentage;
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
 	private int fortune;
@@ -47,6 +46,11 @@ public class Player {
 
 	}
 
+	public boolean getPayAmountOrPercentage() {
+		return payAmountOrPercentage;
+
+	}
+
 	public void setFortune(int value) {
 		fortune = value + fortune;
 
@@ -79,5 +83,7 @@ public class Player {
 		}
 
 	}
+	
+	public void payRent()
 
 }

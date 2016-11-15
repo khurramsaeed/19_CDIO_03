@@ -6,8 +6,8 @@ public class LaborCamp extends Ownable {
 	private int rent;
 	private int cupSum;
 
-	public LaborCamp(String name, int price, int baseRent) {
-		super(name, price);
+	public LaborCamp(String fieldName, int price, int baseRent) {
+		super(fieldName, price);
 		this.baseRent = baseRent;
 	}
 
