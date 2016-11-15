@@ -1,6 +1,6 @@
 package entity;
 
-import boundaries.TUI;
+import boundary.TUI;
 
 public abstract class Ownable extends Field {
 

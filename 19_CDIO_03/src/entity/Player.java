@@ -2,7 +2,7 @@ package entity;
 
 import java.util.ArrayList;
 
-import boundaries.TUI;
+import boundary.TUI;
 
 public class Player {
 	
