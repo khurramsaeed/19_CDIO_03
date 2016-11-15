@@ -12,6 +12,7 @@ public class Player {
 	private boolean payAmountOrPercentage;
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
+	private int quantityOfTerritories;
 	private int fortune;
 	private int currentPosition;
 
@@ -22,6 +23,7 @@ public class Player {
 		hasLost = false;
 		quantityOfFleets = 0;
 		quantityOfLaborCamps = 0;
+		quantityOfTerritories = 0;
 		currentPosition = 0;
 		fortune = this.getAccountBalance();
 
@@ -64,6 +66,12 @@ public class Player {
 		return quantityOfFleets;
 
 	}
+	
+	public int getQuantityOfTerritories() {
+		return quantityOfTerritories;
+
+	}
+
 
 	public int getQuantityOfLaborCamps() {
 		return quantityOfLaborCamps;
@@ -83,7 +91,4 @@ public class Player {
 		}
 
 	}
-	
-	public void payRent()
-
 }

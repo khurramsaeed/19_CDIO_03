@@ -14,4 +14,12 @@ public class Territory extends Ownable {
 		return rent;
 	}
 
+//	@Override
+//	public int setQuantityOfOwnedFields(Player p) {
+//	p.get
+//		return 0;
+	
+	
+	
+
 }

@@ -23,14 +23,29 @@ public abstract class Ownable extends Field {
 
 	public void setOwner(Player newOwner) {
 		newOwner = owner;
+
+	}
+
+	public boolean checkIfOwned() {
+		if (owner == null) {
+			return false;
+		} else {
+			return true;
+		}
+
 	}
 
 	public void landOnField(Player player) {
-		if (player.getPlayerName() != owner.getPlayerName()) {
+
+		if (checkIfOwned() == false) {
+			buyField(player);
+			
+		} else if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
 			player.setFortune(-getRent());
 			owner.setFortune(getRent());
 		}
 	}
+	
 
 	public void buyField(Player buyer) {
 		if (buyer.getFortune() >= price) {
@@ -40,5 +55,7 @@ public abstract class Ownable extends Field {
 	}
 
 	public abstract int getRent();
+	
+	//public abstract int setQuantityOfOwnedFields();
 
 }
