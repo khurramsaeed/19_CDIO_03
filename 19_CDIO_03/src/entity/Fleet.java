@@ -20,8 +20,27 @@ public class Fleet extends Ownable {
 	public void setRent(int rent) {
 		this.rent = rent;
 	}
-
-
+	
+	public int payRent(int QuantityOfFleets){
+		
+			 if	(QuantityOfFleets == 1){ 
+			rent = Rent_1;
+		}
+		
+		else if (QuantityOfFleets == 2){
+			rent = Rent_2;
+			
+		}
+		
+		else if (QuantityOfFleets == 3){
+			rent = Rent_3;
+		}
+		
+		else if (QuantityOfFleets == 4){
+			rent = Rent_4;
+		}
+		return rent;
+	}
 }
 
  
