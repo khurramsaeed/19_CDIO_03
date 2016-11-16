@@ -5,6 +5,7 @@ public class LaborCamp extends Ownable {
 	private int baseRent;
 	private int rent;
 	private int cupSum;
+	private int quantityOfLaborCamps;
 
 	public LaborCamp(String fieldName, int price, int baseRent) {
 		super(fieldName, price);
@@ -13,8 +14,9 @@ public class LaborCamp extends Ownable {
 
 	public int getRent() {
 		baseRent = 100;
-		int quantityOfLaborCamps = super.getOwner().getQuantityOfLaborCamps();
-		rent = (baseRent * cupSum) * quantityOfLaborCamps;
+		quantityOfLaborCamps = super.getOwner().getQuantityOfLaborCamps();
+		this.rent = (baseRent * cupSum) * quantityOfLaborCamps;
+		
 		return rent;
 	}
 

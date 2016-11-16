@@ -12,12 +12,14 @@ public class Launch {
 	
 
 	public static void main(String[] args) {
-		PlayerList PL = new PlayerList();
-		PL.addPlayer();
+//		PlayerList PL = new PlayerList();
+//		PL.addPlayer();
 		
-//		GameBoard gb = new GameBoard();
-//		GuiController gc = new GuiController();
-//		gc.GUIField(gb.getFields());
+		
+		
+GameBoard gb = new GameBoard();
+GuiController gc = new GuiController();
+gc.GUIField(gb.getFields());
 		
 		
 		
