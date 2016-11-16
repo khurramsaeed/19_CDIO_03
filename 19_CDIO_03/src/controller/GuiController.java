@@ -182,22 +182,20 @@ public class GuiController {
 		.build();
 		
 		GUI.create(desktopFields);
-		GUI.showMessage("Welcome to this game!)#€€%/€&€");
+		GUI.showMessage("Welcome to this game!");
 	}
 	
 	public void GUIaddPlayer(PlayerList player, Player p){
 		
-		for(int i = 0; i <= player.PlayerListLength(); i++){
+		for(int i = 0; i < player.PlayerListLength(); i++){
 		GUI.addPlayer(player.getPlayer(i).getPlayerName(), p.getFortune());
 		}
 	}
 	public void GUIDice(Dice d1, Dice d2){
-		
-		GUI.getUserLeftButtonPressed("Roll", "roll", "no");
 	
 		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
 		
-		GUI.getUserButtonPressed("", "Press to roll");
+		//GUI.getUserButtonPressed("", "Press to roll");
 		
 		GUI.setDice(d1.getFaceValue(), 90, d2.getFaceValue(), 270);
 	}

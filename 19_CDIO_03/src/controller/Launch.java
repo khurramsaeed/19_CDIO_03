@@ -18,7 +18,7 @@ public class Launch {
 PlayerList PL = new PlayerList();
 PL.addPlayer();
 		
-		
+System.out.println(PL.PlayerListLength());
 		
 GameBoard gb = new GameBoard();
 GuiController gc = new GuiController();
@@ -31,7 +31,7 @@ gc.GUIField(gb.getFields());
 
 gc.GUIaddPlayer(PL, p);
 
-gc.GUIDice(d1, d2);		
+gc.GUIDice(d1, d2);	
 		
 	}
 	
