@@ -10,7 +10,7 @@ public class Fleet extends Ownable {
 
 	public Fleet(String fieldName, int price, int rent) {
 		super(fieldName, price);
-		this.rent = rent;
+		this.rent = rent; 
 	}
 
 	public int getRent() {
@@ -32,5 +32,13 @@ public class Fleet extends Ownable {
 		}
 		return rent;
 	}
+
+	@Override
+	public void setQuantityOfField(Player player) {
+		player.setQuantityOfFleets();
+		
+	}
+
+	
 
 }

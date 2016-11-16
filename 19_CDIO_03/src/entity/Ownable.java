@@ -29,7 +29,7 @@ public abstract class Ownable extends Field {
 	public boolean checkIfOwned() {
 		if (owner == null) {
 			return false;
-		} else {
+		} else { 
 			return true;
 		}
 
@@ -51,11 +51,17 @@ public abstract class Ownable extends Field {
 		if (buyer.getFortune() >= price) {
 			buyer.setFortune(getPrice());
 			setOwner(buyer);
+			setQuantityOfField(buyer);
+			
+			
+			
+			
 		}
 	}
 
 	public abstract int getRent();
 	
-	//public abstract int setQuantityOfOwnedFields();
+	public abstract void setQuantityOfField(Player player);
+	
 
 }
