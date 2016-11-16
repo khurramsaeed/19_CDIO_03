@@ -1,4 +1,4 @@
-package boundaries;
+package boundary;
 
 import desktop_resources.GUI;
 import desktop_fields.Field;

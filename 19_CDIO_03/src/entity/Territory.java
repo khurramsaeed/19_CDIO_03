@@ -1,21 +1,41 @@
 package entity;
 
 public class Territory extends Ownable {
-	
-	protected int rent;
-	boolean buyIt = false;
 
-	public Territory(String name, int rent, int price) {
-		// TODO Auto-generated constructor stub
-		super(name, price);
+	protected int rent;
+
+	public Territory(String fieldName, int price, int rent) {
+		super(fieldName, price);
 		this.rent = rent;
 	}
 
 	@Override
-	public int getRent() {		
+	public int getRent() {
 		return rent;
+	}
+
+	@Override
+	public void setQuantityOfField(Player player) {
+		player.setQuantityOfTerritories();
+		
+	}
+	
+	
+
+	
+
+
+		
+
+
+	
+		
 	}
 
 	
 	
-} 
+	
+	
+	
+
+

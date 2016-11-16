@@ -4,8 +4,8 @@ public class Refuge extends Field {
 
 	private int bonus; 
 
-	public Refuge(String name, int bonus) {
-		super(name);
+	public Refuge(String fieldName, int bonus) {
+		super(fieldName);
 		this.bonus = bonus;
 	}
 	
@@ -18,16 +18,8 @@ public class Refuge extends Field {
 	}
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
-		
+		player.setFortune(bonus);		
 	}
-
-	@Override
-	public int getRent() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 }
 

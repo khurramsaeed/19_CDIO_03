@@ -1,67 +1,67 @@
 package entity;
 
-import boundaries.TUI;
+import entity.Player;
 
 public abstract class Ownable extends Field {
 
-	protected boolean isOwned = false;
-	protected boolean buyField;
-	private int price;
-	private Player owner;
-	
-	public Ownable(String name, int price){
-		super(name);
+	protected int price;
+	protected Player owner;
+
+	public Ownable(String fieldName, int price) {
+		super(fieldName);
 		this.price = price;
-	}
-	
-	public Ownable() {
-		super();
+
 	}
 
-	
-	public void setPrice(){
-		this.price = price;
-	}
-	
-	public int getPrice(){
+	public int getPrice() {
 		return price;
 	}
 
-	protected void buyField(Player player){
-		owner = player;
-		owner.addFortune(-price);
-		isOwned = true;
-	}
-	
 	public Player getOwner() {
 		return owner;
 	}
-	
-	public abstract int getRent();
-	
-	@Override
-	public void landOnField(Player player) {
-		
-		if(isOwned == true){
-			player.addFortune(-getRent());
-			if(owner.hasLost != true){
-				owner.addFortune(getRent());
-			}
-			 
-			else if(TUI.sc.nextInt() == 1){
-				
-				buyField(player);
-				buyField = false;
-				
-			}
-			
-			else if(TUI.sc.nextInt() == 2){
-				return;
-			}
+
+	public void setOwner(Player newOwner) {
+		newOwner = owner;
+
+	}
+
+	public boolean checkIfOwned() {
+		if (owner == null) {
+			return false;
+		} else { 
+			return true;
 		}
-		
+
+	}
+
+	public void landOnField(Player player) {
+
+		if (checkIfOwned() == false) {
+			buyField(player);
+			
+		} else if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
+			player.setFortune(-getRent());
+			owner.setFortune(getRent());
+		}
 	}
 	
-	
-}
 
+	public void buyField(Player buyer) {
+		if (buyer.getFortune() >= price) {
+			buyer.setFortune(getPrice());
+			setOwner(buyer);
+			setQuantityOfField(buyer);
+			
+			
+			
+			
+		}
+	}
+
+	public abstract int getRent();
+	
+	public abstract void setQuantityOfField(Player player);
+	
+
+}

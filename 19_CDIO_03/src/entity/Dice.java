@@ -4,19 +4,20 @@ public class Dice {
 	private int facevalue;
 	private int sides;
 
-	public Dice(){ //Constructor, defines dice size, set to 6 & can be modified to 12
+	public Dice() {
 		this(6);
 	}
-	public Dice(int sides) { //Method Dice with parameter sides, sets global sides = local sides
+
+	public Dice(int sides) {
 		this.sides = sides;
 	}
 
-	public int getFacevalue() { //Returns the facevalue of the dice
+	public int getFaceValue() {
 		return facevalue;
 	}
-	
-	public void roll(){ //roll() function with math Random 
-		this.facevalue = (int)(Math.random()*sides) +1;
+
+	public void roll() {
+		this.facevalue = (int) (Math.random() * sides) + 1;
 	}
 
-} 
+}
