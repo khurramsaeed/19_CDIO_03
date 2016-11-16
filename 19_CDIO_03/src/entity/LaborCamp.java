@@ -38,6 +38,7 @@ public class LaborCamp extends Ownable {
 			player.setQuantityOfLaborCamps();
 			
 		}
+	
 		
 	}
 
