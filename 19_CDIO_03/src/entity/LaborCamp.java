@@ -23,14 +23,6 @@ public class LaborCamp extends Ownable {
 		this.rent = (baseRent * cupSum) * quantityOfLaborCamps;
 		
 		return rent;
-
-
-	public int getRent() {
-		baseRent = 100;
-		quantityOfLaborCamps = super.getOwner().getQuantityOfLaborCamps();
-		this.rent = (baseRent * cupSum) * quantityOfLaborCamps;
-		
-		return rent;
 	}
 
 	@Override
