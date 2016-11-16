@@ -13,6 +13,7 @@ public class LaborCamp extends Ownable {
 	
 	public void setCupSum(int cupSum) {
 		this.cupSum = cupSum;
+
 	}
 	
 	public void setRent(int rent){
@@ -25,4 +26,13 @@ public class LaborCamp extends Ownable {
 		return rent;
 	}
 
-}
+	@Override
+		public void setQuantityOfField(Player player) {
+			player.setQuantityOfLaborCamps();
+			
+		}
+	
+		
+	}
+
+

@@ -77,10 +77,25 @@ public class Player {
 		return quantityOfLaborCamps;
 
 	}
-
-	public void addFleet() {
+	
+	public void setQuantityOfFleets(){
 		quantityOfFleets++;
+		
 	}
+	
+	public void setQuantityOfTerritories(){
+		quantityOfTerritories++;
+		
+	}
+	
+	public void setQuantityOfLaborCamps(){
+		quantityOfLaborCamps++;
+		
+	}
+	
+	
+
+	
 
 	public void movePlayer(int move) {
 		currentPosition = currentPosition + move;

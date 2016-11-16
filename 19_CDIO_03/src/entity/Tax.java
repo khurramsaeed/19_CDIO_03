@@ -3,7 +3,7 @@ package entity;
 public class Tax extends Field {
 
 	private int taxAmount;
-	private int taxRate = -1;
+	private int taxRate = -1; //hvorfor -1?
 
 	public Tax(String fieldName, int taxAmount) {
 		super(fieldName);
