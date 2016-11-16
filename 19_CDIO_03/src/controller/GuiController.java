@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Color;
 
+import desktop_codebehind.Car;
 import desktop_fields.Street;
 import desktop_resources.GUI;
 import entity.Cup;
@@ -15,6 +16,9 @@ import entity.Refuge;
 import entity.Tax;
 import entity.Territory;
 import entity.Dice;
+
+
+
 public class GuiController {
 	
 	Dice d1 = new Dice();
@@ -23,7 +27,7 @@ public class GuiController {
 	
 	Cup c1 = new Cup();
 
-	public void GUIField(Field[] fields){
+	public void GUIField(Field[] fields, PlayerList player){
 		
 		
 		desktop_fields.Field[] desktopFields = new desktop_fields.Field[21];
@@ -189,17 +193,38 @@ public class GuiController {
 		
 		GUI.create(desktopFields);
 		GUI.showMessage("Welcome to this game!");
+		
 	}
 	
 	public void GUIaddPlayer(PlayerList player, Player p){
 		
 		for(int i = 0; i < player.PlayerListLength(); i++){
 		GUI.addPlayer(player.getPlayer(i).getPlayerName(), p.getFortune());
-		}
-	}
-	public void GUIDice(){
 		
-		GUI.setDice(c1.diceResult1(), 90, c1.diceResult2(), 270);
+		}
+		
+		
+	}
+	public void GUIDice(PlayerList player){
+		
+		
+
+		for(int i = 0; i < player.PlayerListLength(); i++){
+		
+		GUI.getUserButtonPressed(player.getPlayer(i).getPlayerName() + " Press to play", "Roll");
+		GUI.setDice(c1.diceResult1(), c1.diceResult2());
+		
+		}
+		
+	}
+	
+
+	
+	public void movePlayer(PlayerList player,  Player p) {
+		// Remove all the cars of the player
+		GUI.removeAllCars(player.getPlayer(1).getPlayerName());
+		// Place a new car on the new position.
+		GUI.setCar(p.movePlayer(c1.getSum()), p.getPlayerName());
 		
 	}
 }

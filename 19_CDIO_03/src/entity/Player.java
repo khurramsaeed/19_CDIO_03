@@ -97,13 +97,16 @@ public class Player {
 
 	
 
-	public void movePlayer(int move) {
+	public int movePlayer(int move) {
 		currentPosition = currentPosition + move;
 
 		if (currentPosition >= 22) {
 			currentPosition = currentPosition - 22;
-
+			
+		
 		}
+		
+		return currentPosition;
 
 	}
 }

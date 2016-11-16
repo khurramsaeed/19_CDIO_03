@@ -26,11 +26,14 @@ Player p = new Player("");
 
 
 
-gc.GUIField(gb.getFields());
+gc.GUIField(gb.getFields(), PL);
 
+
+while(true){
 gc.GUIaddPlayer(PL, p);
+gc.GUIDice(PL);
 
-gc.GUIDice();	
+}
 		
 	}
 	

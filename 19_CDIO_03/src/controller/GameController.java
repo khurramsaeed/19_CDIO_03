@@ -16,12 +16,8 @@ import desktop_fields.*;
 import entity.*;
 
 public class GameController {
+PlayerList player = new PlayerList();
 
-	
-	public static void Launch(){
-		
-		
-	}
-	
+Player p = new Player("");
+
 }
- 
