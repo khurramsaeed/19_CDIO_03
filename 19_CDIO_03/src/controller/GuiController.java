@@ -206,11 +206,12 @@ public class GuiController {
 		
 	}
 	public void GUIDice(PlayerList player){
-		
-		d1.roll();
-		d2.roll();
+
 
 		for(int i = 0; i < player.PlayerListLength(); i++){
+			
+		d1.roll();
+		d2.roll();
 		
 		GUI.getUserButtonPressed(player.getPlayer(i).getPlayerName() + " Press to play", "Roll");
 		
