@@ -10,12 +10,23 @@ public class Cup {
 		t2.roll();
 	}
 
-	public int sum() {
-
+	
+	public int diceResult1(){
 		int x = t1.getFaceValue();
+		
+		return x;
+		
+	}
+	
+	public int diceResult2(){
 		int y = t2.getFaceValue();
+		
+		return y;
+	}
+	public int getSum() {
 
-		return x + y;
+		return diceResult1() + diceResult2();
 
 	}
+	
 }

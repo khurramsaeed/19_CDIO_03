@@ -13,7 +13,7 @@ public class LaborCamp extends Ownable {
 		super(fieldName, price);
 		this.baseRent = 100;
 		this.quantityOfLaborCamp = 1;
-		this.cupSum =  c1.sum();
+		this.cupSum =  c1.getSum();
 	}
 	
 

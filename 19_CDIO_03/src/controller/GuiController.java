@@ -16,6 +16,12 @@ import entity.Tax;
 import entity.Territory;
 import entity.Dice;
 public class GuiController {
+	
+	Dice d1 = new Dice();
+	
+	Dice d2 = new Dice();
+	
+	Cup c1 = new Cup();
 
 	public void GUIField(Field[] fields){
 		
@@ -191,13 +197,10 @@ public class GuiController {
 		GUI.addPlayer(player.getPlayer(i).getPlayerName(), p.getFortune());
 		}
 	}
-	public void GUIDice(Dice d1, Dice d2){
-	
-		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
+	public void GUIDice(){
 		
-		//GUI.getUserButtonPressed("", "Press to roll");
+		GUI.setDice(c1.diceResult1(), 90, c1.diceResult2(), 270);
 		
-		GUI.setDice(d1.getFaceValue(), 90, d2.getFaceValue(), 270);
 	}
 }
 

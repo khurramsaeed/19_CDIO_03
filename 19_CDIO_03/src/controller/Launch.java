@@ -24,14 +24,13 @@ GameBoard gb = new GameBoard();
 GuiController gc = new GuiController();
 Player p = new Player("");
 
-Dice d1 = new Dice();
-Dice d2 = new Dice();
+
 
 gc.GUIField(gb.getFields());
 
 gc.GUIaddPlayer(PL, p);
 
-gc.GUIDice(d1, d2);	
+gc.GUIDice();	
 		
 	}
 	
