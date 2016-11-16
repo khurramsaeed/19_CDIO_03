@@ -214,7 +214,7 @@ public class GuiController {
 		
 		GUI.getUserButtonPressed(player.getPlayer(i).getPlayerName() + " Press to play", "Roll");
 		
-		GUI.setDice(d1.getFaceValue(), 90, d2.getFaceValue(), 270);
+		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
 		
 		
 		}
