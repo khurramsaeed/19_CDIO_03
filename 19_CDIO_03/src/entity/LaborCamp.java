@@ -12,10 +12,14 @@ public class LaborCamp extends Ownable {
 	}
 	
 	public void setCupSum(int cupSum) {
-		this.cupSum = cupSum;
+		this.cupSum = 2;
 
 	}
-	
+//	public void setRent(){
+//		int rent = (baseRent * cupSum) * super.getOwner().getQuantityOfLaborCamps();
+//		this.rent = rent;
+//	}
+
 	@Override
 	public int getRent() {
 		int rent = (baseRent * cupSum) * super.getOwner().getQuantityOfLaborCamps();

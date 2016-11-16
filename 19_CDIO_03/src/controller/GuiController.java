@@ -9,6 +9,7 @@ import entity.Dice;
 import entity.Field;
 import entity.LaborCamp;
 import entity.Refuge;
+import entity.Tax;
 import entity.Territory;
 import entity.Dice;
 public class GuiController {
@@ -16,7 +17,7 @@ public class GuiController {
 	public void GUIField(Field[] fields){
 		
 		
-		desktop_fields.Field[] desktopFields = new desktop_fields.Field[15];
+		desktop_fields.Field[] desktopFields = new desktop_fields.Field[16];
 		
 		
 		desktopFields[0] = new desktop_fields.Street.Builder()
@@ -133,10 +134,16 @@ public class GuiController {
 		.setBgColor(Color.orange)
 		.build();
 		
+		//Tax
+		desktopFields[15] = new desktop_fields.Tax.Builder()
+		.setTitle(fields[16].getFieldName())
+		.setSubText("Price: "+ ((Tax)fields[16]).getRent())
+		.setBgColor(Color.red)
+		.build();
 		
 		
 		GUI.create(desktopFields);
-		GUI.showMessage("Rent: " + ((LaborCamp) fields[15]).getRent());
+		GUI.showMessage("Rent: " + ((LaborCamp) fields[14]).getRent());
 	}
 
 }
