@@ -8,7 +8,7 @@ public class LaborCamp extends Ownable {
 
 	public LaborCamp(String fieldName, int price, int baseRent) {
 		super(fieldName, price);
-		this.baseRent = baseRent;
+		this.baseRent = 100;
 	}
 	
 	public void setCupSum(int cupSum) {
@@ -16,13 +16,10 @@ public class LaborCamp extends Ownable {
 
 	}
 	
-	public void setRent(int rent){
-		baseRent = 100;
-		rent = (baseRent * cupSum) * super.getOwner().getQuantityOfLaborCamps();
-		this.rent = rent;
-	}
-
+	@Override
 	public int getRent() {
+		int rent = (baseRent * cupSum) * super.getOwner().getQuantityOfLaborCamps();
+		this.rent = rent;
 		return rent;
 	}
 
