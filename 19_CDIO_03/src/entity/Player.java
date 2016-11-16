@@ -14,7 +14,7 @@ public class Player {
 	private int quantityOfLaborCamps;
 	private int quantityOfTerritories;
 	private int fortune;
-	private int currentPosition;
+	private int currentPosition = 0;
 
 	public Player(String playerName) {
 
@@ -24,7 +24,6 @@ public class Player {
 		quantityOfFleets = 0;
 		quantityOfLaborCamps = 0;
 		quantityOfTerritories = 0;
-		currentPosition = 0;
 		fortune = this.getAccountBalance();
 
 	}
@@ -98,7 +97,7 @@ public class Player {
 	
 
 	public int movePlayer(int move) {
-		currentPosition = currentPosition + move;
+		this.currentPosition = currentPosition + move;
 
 		if (currentPosition >= 22) {
 			currentPosition = currentPosition - 22;

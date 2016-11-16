@@ -218,7 +218,7 @@ public class GuiController {
 		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
 		
 		GUI.removeAllCars(player.getPlayer(i).getPlayerName());
-		GUI.setCar(d1.getFaceValue() + d2.getFaceValue(), player.getPlayer(i).getPlayerName());
+		GUI.setCar(p.movePlayer(c1.getSum()), player.getPlayer(i).getPlayerName());
 
 		}
 		
