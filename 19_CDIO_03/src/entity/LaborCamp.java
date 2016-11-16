@@ -11,6 +11,10 @@ public class LaborCamp extends Ownable {
 		super(fieldName, price);
 		this.baseRent = baseRent;
 	}
+	
+	public void setCupSum(int cupSum) {
+		this.cupSum = cupSum;
+	}
 
 	public int getRent() {
 		baseRent = 100;
@@ -18,10 +22,6 @@ public class LaborCamp extends Ownable {
 		this.rent = (baseRent * cupSum) * quantityOfLaborCamps;
 		
 		return rent;
-	}
-
-	public void setCupSum(int cupSum) {
-		this.cupSum = cupSum;
 	}
 
 }
