@@ -207,12 +207,15 @@ public class GuiController {
 	}
 	public void GUIDice(PlayerList player){
 		
-		
+		d1.roll();
+		d2.roll();
 
 		for(int i = 0; i < player.PlayerListLength(); i++){
 		
 		GUI.getUserButtonPressed(player.getPlayer(i).getPlayerName() + " Press to play", "Roll");
-		GUI.setDice(c1.diceResult1(), c1.diceResult2());
+		
+		GUI.setDice(d1.getFaceValue(), 90, d2.getFaceValue(), 270);
+		
 		
 		}
 		
