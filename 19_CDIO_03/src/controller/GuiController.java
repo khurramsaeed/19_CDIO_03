@@ -205,7 +205,7 @@ public class GuiController {
 		
 		
 	}
-	public void GUIDice(PlayerList player){
+	public void GUIDice(PlayerList player, Player p){
 
 
 		for(int i = 0; i < player.PlayerListLength(); i++){
@@ -217,20 +217,23 @@ public class GuiController {
 		
 		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
 		
-		
+		GUI.removeAllCars(player.getPlayer(i).getPlayerName());
+		GUI.setCar(d1.getFaceValue() + d2.getFaceValue(), player.getPlayer(i).getPlayerName());
+
 		}
 		
 	}
+}
 	
 
 	
-	public void movePlayer(PlayerList player,  Player p) {
-		// Remove all the cars of the player
-		GUI.removeAllCars(player.getPlayer(1).getPlayerName());
-		// Place a new car on the new position.
-		GUI.setCar(p.movePlayer(c1.getSum()), p.getPlayerName());
-		
-	}
-}
+//	public void movePlayer(PlayerList player,  Player p) {
+//		// Remove all the cars of the player
+//		GUI.removeAllCars(player.getPlayer(1).getPlayerName());
+//		// Place a new car on the new position.
+//		GUI.setCar(p.movePlayer(4), p.getPlayerName());
+//		
+//	}
+//}
 
 
