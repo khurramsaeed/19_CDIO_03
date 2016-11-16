@@ -22,4 +22,10 @@ public class PlayerList {
 		return playerList.get(index);
 
 	}
+	
+	public <playerList>  int PlayerListLength (){
+		return playerList.size();
+		
+		
+	}
 }

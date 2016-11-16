@@ -14,22 +14,21 @@ public class Fleet extends Ownable {
 	}
 
 	public int getRent() {
-		if (super.getOwner().getQuantityOfFleets() == 1) {
+		//if (super.getOwner().getQuantityOfFleets() 0 == 1) {
 			rent = Rent_1;
-		}
 
-		else if (super.getOwner().getQuantityOfFleets() == 2) {
-			rent = Rent_2;
-
-		}
-
-		else if (super.getOwner().getQuantityOfFleets() == 3) {
-			rent = Rent_3;
-		}
-
-		else if (super.getOwner().getQuantityOfFleets() == 4) {
-			rent = Rent_4;
-		}
+//		if (super.getOwner().getQuantityOfFleets() == 2) {
+//			rent = Rent_2;
+//
+//		}
+//
+//		else if (super.getOwner().getQuantityOfFleets() == 3) {
+//			rent = Rent_3;
+//		}
+//
+//		else if (super.getOwner().getQuantityOfFleets() == 4) {
+//			rent = Rent_4;
+//		}
 		return rent;
 	}
 

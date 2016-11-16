@@ -7,17 +7,20 @@ import desktop_resources.GUI;
 import entity.Cup;
 import entity.Dice;
 import entity.Field;
+import entity.Fleet;
 import entity.LaborCamp;
+import entity.Player;
+import entity.PlayerList;
 import entity.Refuge;
 import entity.Tax;
 import entity.Territory;
 import entity.Dice;
 public class GuiController {
-	
+
 	public void GUIField(Field[] fields){
 		
 		
-		desktop_fields.Field[] desktopFields = new desktop_fields.Field[16];
+		desktop_fields.Field[] desktopFields = new desktop_fields.Field[21];
 		
 		
 		desktopFields[0] = new desktop_fields.Street.Builder()
@@ -136,14 +139,68 @@ public class GuiController {
 		
 		//Tax
 		desktopFields[15] = new desktop_fields.Tax.Builder()
-		.setTitle(fields[16].getFieldName())
-		.setSubText("Price: "+ ((Tax)fields[16]).getRent())
+		.setDescription(fields[16].getFieldName())
+		.setSubText("Tax: "+ ((Tax)fields[16]).getTaxAmount())
+		.setBgColor(Color.red)
+		.build();
+		
+		desktopFields[16] = new desktop_fields.Tax.Builder()
+		.setDescription(fields[17].getFieldName())
+		.setSubText("Tax: "+ ((Tax)fields[17]).getTaxAmount() + " or 10% of your assets.")
 		.setBgColor(Color.red)
 		.build();
 		
 		
+		//Fleets
+		desktopFields[17] = new desktop_fields.Street.Builder()
+		.setTitle(fields[18].getFieldName())
+		.setSubText("Price: "+ ((Fleet)fields[18]).getPrice())
+		.setRent("Rent: " + ((Fleet)fields[18]).getRent())
+		.setBgColor(Color.PINK)
+		.build();
+		
+		desktopFields[18] = new desktop_fields.Street.Builder()
+		.setTitle(fields[19].getFieldName())
+		.setDescription("")
+		.setSubText("Price: "+((Fleet)fields[19]).getPrice())
+		.setRent("Rent: "+((Fleet)fields[19]).getRent())
+		.setBgColor(Color.PINK)
+		.build();
+		
+		desktopFields[19] = new desktop_fields.Street.Builder()
+		.setTitle(fields[20].getFieldName())
+		.setSubText("Price: "+ ((Fleet)fields[20]).getPrice())
+		.setRent("Rent: " + ((Fleet)fields[20]).getRent())
+		.setBgColor(Color.PINK)
+		.build();
+		
+		desktopFields[20] = new desktop_fields.Street.Builder()
+		.setTitle(fields[21].getFieldName())
+		.setSubText("Price: "+ ((Fleet)fields[21]).getPrice())
+		.setRent("Rent: " + ((Fleet)fields[21]).getRent())
+		.setBgColor(Color.PINK)
+		.build();
+		
 		GUI.create(desktopFields);
-		GUI.showMessage("Rent: " + ((LaborCamp) fields[14]).getRent());
+		GUI.showMessage("Welcome to this game!)#€€%/€&€");
 	}
-
+	
+	public void GUIaddPlayer(PlayerList player, Player p){
+		
+		for(int i = 0; i <= player.PlayerListLength(); i++){
+		GUI.addPlayer(player.getPlayer(i).getPlayerName(), p.getFortune());
+		}
+	}
+	public void GUIDice(Dice d1, Dice d2){
+		
+		GUI.getUserLeftButtonPressed("Roll", "roll", "no");
+	
+		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
+		
+		GUI.getUserButtonPressed("", "Press to roll");
+		
+		GUI.setDice(d1.getFaceValue(), 90, d2.getFaceValue(), 270);
+	}
 }
+
+

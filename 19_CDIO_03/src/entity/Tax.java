@@ -5,10 +5,9 @@ public class Tax extends Field {
 	private int taxAmount;
 	private int taxRate = -1; //hvorfor -1?
 
-	public Tax(String fieldName, int taxAmount, int taxRate) {
+	public Tax(String fieldName, int taxAmount) {
 		super(fieldName);
 		this.taxAmount = taxAmount;
-		this.taxRate = taxRate;
 
 	}
 	
@@ -25,9 +24,8 @@ public class Tax extends Field {
 
 	}
 	
-	public int getRent(){
-		return -1;
-		
+	public int getTaxAmount(){
+	
+		return taxAmount;
 	}
-
 }
