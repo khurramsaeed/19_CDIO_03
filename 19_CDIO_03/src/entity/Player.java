@@ -96,7 +96,7 @@ public class Player {
 
 	
 
-	public int movePlayer(int move) {
+	public int movePlayer(int move, Player player) {
 		this.currentPosition = currentPosition + move;
 
 		if (currentPosition >= 22) {
@@ -106,6 +106,7 @@ public class Player {
 		}
 		
 		return currentPosition;
+		
 
 	}
 }
