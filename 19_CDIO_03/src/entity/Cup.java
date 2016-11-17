@@ -10,19 +10,19 @@ public class Cup {
 		d2.roll();
 	}
 
-	public int getDiceOneResult() {
+	public int getD1Result() {
 		return d1.getFaceValue();
 
 	}
 
-	public int getDiceTwoResult() {
+	public int getD2Result() {
 		return d2.getFaceValue();
 
 	}
 
 	public int getSum() {
 
-		return getDiceOneResult() + getDiceTwoResult();
+		return getD1Result() + getD2Result();
 
 	}
 
