@@ -2,29 +2,28 @@ package entity;
 
 public class Cup {
 
-	Dice t1 = new Dice();
-	Dice t2 = new Dice();
+	Dice d1 = new Dice();
+	Dice d2 = new Dice();
 
 	public Cup() {
-		t1.roll();
-		t2.roll();
+		d1.roll();
+		d2.roll();
 	}
 
-	
-	public int diceResult1(){
-		int x = t1.getFaceValue();
-		return x;
-		
+	public int getDiceOneResult() {
+		return d1.getFaceValue();
+
 	}
-	
-	public int diceResult2(){
-		int y = t2.getFaceValue();
-		return y;
+
+	public int getDiceTwoResult() {
+		return d2.getFaceValue();
+
 	}
+
 	public int getSum() {
 
-		return diceResult1() + diceResult2();
+		return getDiceOneResult() + getDiceTwoResult();
 
 	}
-	
+
 }
