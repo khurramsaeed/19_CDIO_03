@@ -17,11 +17,11 @@ public class Launch {
 		GuiController gc = new GuiController();
 		Player p = new Player("");
 		PlayerList PL = new PlayerList();	
-
+		
 		gc.GUIField(gb.getFields(), PL);
 		
 		PL.addPlayer();
-
+		
 
 		while (true) {
 			gc.GUIaddPlayer(PL, p);

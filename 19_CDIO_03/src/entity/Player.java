@@ -95,7 +95,7 @@ public class Player {
 	public int movePlayer(int move) {
 		this.currentPosition = currentPosition + move;
 
-		if (currentPosition >= 21) {
+		if (currentPosition > 21) {
 			currentPosition = currentPosition - 21;
 			
 		
