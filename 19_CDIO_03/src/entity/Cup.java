@@ -1,24 +1,29 @@
 package entity;
 
 public class Cup {
-	
-	//Create object
-	//Change dice type, Dice(x)
-	Dice t1 = new Dice();
-	Dice t2 = new Dice();
 
-	public Cup() { //Constructor
-		t1.roll();
-		t2.roll();
+	Dice d1 = new Dice();
+	Dice d2 = new Dice();
+
+	public Cup() {
+		d1.roll();
+		d2.roll();
 	}
 
-	public int sum() { //Method sum, returns x+y = sum
-
-		int x = t1.getFacevalue();
-		int y = t2.getFacevalue();
-		
-		return x + y;
+	public int getD1Result() {
+		return d1.getFaceValue();
 
 	}
+
+	public int getD2Result() {
+		return d2.getFaceValue();
+
+	}
+
+	public int getSum() {
+
+		return getD1Result() + getD2Result();
+
+	}
+
 }
- 

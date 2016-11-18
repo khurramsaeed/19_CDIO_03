@@ -1,30 +1,39 @@
 package entity;
 
 public class LaborCamp extends Ownable {
-	
-	private int startRent = 100;
-	private int cupSum;
-	
-	public LaborCamp() {
-		super();
 
-	}
-	public LaborCamp(String name, int price) {
-		super(name, price);
-		
+	private int baseRent;
+	private int rent;
+	private int cupSum;
+	private int quantityOfLaborCamp;
+	
+	Cup c1 = new Cup();
+
+	public LaborCamp(String fieldName, int price, int baseRent) {
+		super(fieldName, price);
+		this.baseRent = 100;
+		this.quantityOfLaborCamp = 1;
+		this.cupSum =  c1.getSum();
 	}
 	
-	public int getSum(int cupSum){
-		this.cupSum = cupSum;
-		int rent = startRent * this.cupSum;
-		return rent;
-	}
+
+
 	@Override
 	public int getRent() {
-	
-		return startRent;
+		
+		
+		int rent = (baseRent * cupSum) * quantityOfLaborCamp;
+		this.rent = rent;
+		return rent;
 	}
 
-}
+	@Override
+		public void setQuantityOfField(Player player) {
+			player.setQuantityOfLaborCamps();
+			
+		}
 
- 
+		
+	}
+
+
