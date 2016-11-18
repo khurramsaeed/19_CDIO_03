@@ -198,15 +198,16 @@ public class GuiController {
 		
 	}
 	
-	public void GUIaddPlayer(PlayerList player, Player p){
+
+	public void GUIaddPlayer(PlayerList players, Player p){
 		
-		for(int i = 0; i < player.PlayerListLength(); i++){
-		GUI.addPlayer(player.getPlayer(i).getPlayerName(), p.getFortune());
+		for(int i = 0; i < players.PlayerListLength(); i++){
+		GUI.addPlayer(players.getPlayer(i).getPlayerName(), p.getFortune());
+		
 		
 		}
 		
-		
-		
+		GUI.showMessage("You will get 30000 as a starting bonus");
 	}
 	public void GUIDice(PlayerList players){
 

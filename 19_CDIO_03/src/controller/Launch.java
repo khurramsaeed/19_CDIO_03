@@ -12,19 +12,16 @@ import entity.PlayerList;
 public class Launch {
 
 	public static void main(String[] args) {
-		System.out.println("How many players wish to play?");
-		PlayerList PL = new PlayerList();
 		
-		PL.addPlayer();
-		
-	
 		GameBoard gb = new GameBoard();
 		GuiController gc = new GuiController();
 		Player p = new Player("");
-
-		Cup c1 = new Cup();
+		PlayerList PL = new PlayerList();	
 
 		gc.GUIField(gb.getFields(), PL);
+		
+		PL.addPlayer();
+
 
 		while (true) {
 			gc.GUIaddPlayer(PL, p);
