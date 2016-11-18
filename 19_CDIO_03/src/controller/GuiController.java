@@ -206,26 +206,26 @@ public class GuiController {
 		}
 		
 		
+		
 	}
-	public void GUIDice(PlayerList player, Player p){
-		
-		Cup c2 = new Cup();
+	public void GUIDice(PlayerList players){
 
-
-		for(int i = 0; i < player.PlayerListLength(); i++){
+		for(int i = 0; i < players.PlayerListLength(); i++){
 			
-		d1.roll();
-		d2.roll();
-	
-		GUI.getUserButtonPressed(player.getPlayer(i).getPlayerName() + " Press to play", "Roll");
+			Player p = players.getPlayer(i);
+			
+			
+			d1.roll();
+			d2.roll();
 		
-		GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
+			GUI.getUserButtonPressed(players.getPlayer(i).getPlayerName() + " Press to play", "Roll");
+			
+			GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
+			
+			GUI.removeAllCars(players.getPlayer(i).getPlayerName());
+			GUI.setCar(p.movePlayer(d1.getFaceValue() + d2.getFaceValue()), p.getPlayerName());
 		
-		GUI.removeAllCars(player.getPlayer(i).getPlayerName());
-		GUI.setCar(p.movePlayer(d1.getFaceValue() + d2.getFaceValue(), player.getPlayer(i)), player.getPlayer(i).getPlayerName());
 		
-		
-
 		}
 		
 	}

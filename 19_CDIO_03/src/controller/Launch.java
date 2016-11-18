@@ -12,13 +12,12 @@ import entity.PlayerList;
 public class Launch {
 
 	public static void main(String[] args) {
-		System.out.println("Hvor mange spiller ønsker at spille?");
+		System.out.println("How many players wish to play?");
 		PlayerList PL = new PlayerList();
-
+		
 		PL.addPlayer();
-
-		System.out.println(PL.PlayerListLength());
-
+		
+	
 		GameBoard gb = new GameBoard();
 		GuiController gc = new GuiController();
 		Player p = new Player("");
@@ -29,7 +28,7 @@ public class Launch {
 
 		while (true) {
 			gc.GUIaddPlayer(PL, p);
-			gc.GUIDice(PL, p);
+			gc.GUIDice(PL);
 
 		}
 
