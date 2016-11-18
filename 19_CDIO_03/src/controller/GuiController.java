@@ -53,14 +53,14 @@ public class GuiController {
 		.setDescription("")
 		.setSubText("Price: "+((Territory)fields[3]).getPrice())
 		.setRent("Rent: "+((Territory)fields[3]).getRent())
-		.setBgColor(Color.green)
+		.setBgColor(Color.red)
 		.build();
 		
 		desktopFields[3] = new desktop_fields.Street.Builder()
 		.setTitle(fields[4].getFieldName())
 		.setSubText("Price: "+ ((Territory)fields[4]).getPrice())
 		.setRent("Rent: " + ((Territory)fields[4]).getRent())
-		.setBgColor(Color.blue)
+		.setBgColor(Color.orange)
 		.build();
 		
 		desktopFields[4] = new desktop_fields.Street.Builder()
@@ -68,14 +68,14 @@ public class GuiController {
 		.setDescription("")
 		.setSubText("Price: "+((Territory)fields[5]).getPrice())
 		.setRent("Rent: "+((Territory)fields[5]).getRent())
-		.setBgColor(Color.green)
+		.setBgColor(Color.yellow)
 		.build();
 		
 		desktopFields[5] = new desktop_fields.Street.Builder()
 		.setTitle(fields[6].getFieldName())
 		.setSubText("Price: "+ ((Territory)fields[6]).getPrice())
 		.setRent("Rent: " + ((Territory)fields[6]).getRent())
-		.setBgColor(Color.blue)
+		.setBgColor(Color.lightGray)
 		.build();
 		
 		desktopFields[6] = new desktop_fields.Street.Builder()
@@ -83,14 +83,14 @@ public class GuiController {
 		.setDescription("")
 		.setSubText("Price: "+((Territory)fields[7]).getPrice())
 		.setRent("Rent: "+((Territory)fields[7]).getRent())
-		.setBgColor(Color.green)
+		.setBgColor(Color.pink)
 		.build();
 		
 		desktopFields[7] = new desktop_fields.Street.Builder()
 		.setTitle(fields[8].getFieldName())
 		.setSubText("Price: "+ ((Territory)fields[8]).getPrice())
 		.setRent("Rent: " + ((Territory)fields[8]).getRent())
-		.setBgColor(Color.blue)
+		.setBgColor(Color.magenta)
 		.build();
 		
 		desktopFields[8] = new desktop_fields.Street.Builder()
@@ -98,21 +98,22 @@ public class GuiController {
 		.setDescription("")
 		.setSubText("Price: "+((Territory)fields[9]).getPrice())
 		.setRent("Rent: "+((Territory)fields[9]).getRent())
-		.setBgColor(Color.green)
+		.setBgColor(Color.cyan)
 		.build();
 		
 		desktopFields[9] = new desktop_fields.Street.Builder()
 		.setTitle(fields[10].getFieldName())
 		.setSubText("Price: "+ ((Territory)fields[10]).getPrice())
 		.setRent("Rent: " + ((Territory)fields[10]).getRent())
-		.setBgColor(Color.blue)
+		.setBgColor(Color.darkGray)
+		.setFgColor(Color.white)
 		.build();
 		
 		desktopFields[10] = new desktop_fields.Street.Builder()
 		.setTitle(fields[11].getFieldName())
 		.setSubText("Price: "+ ((Territory)fields[11]).getPrice())
 		.setRent("Rent: " + ((Territory)fields[11]).getRent())
-		.setBgColor(Color.blue)
+		.setBgColor(Color.RED)
 		.build();
 		
 		//Refuge
@@ -121,14 +122,15 @@ public class GuiController {
 		.setTitle(fields[12].getFieldName())
 		.setSubText("Reward: " + ((Refuge)fields[12]).getBonus())
 		.setBgColor(Color.white)
-		.setPicture("hej.png")
+		.setPicture("images/wcity.png")
 		.build();
 		
 		desktopFields[12] = new desktop_fields.Refuge.Builder()
 		.setTitle(fields[13].getFieldName())
 		.setSubText("Reward: " + ((Refuge)fields[13]).getBonus())
-		.setBgColor(Color.white)
-		.setPicture("hej.png")
+		.setBgColor(Color.BLUE)
+		.setFgColor(Color.white)
+		.setPicture("images/monastery.png")
 		.build();
 		
 		//Labor Camp
@@ -137,7 +139,7 @@ public class GuiController {
 		.setTitle(fields[14].getFieldName())
 		.setSubText("Price: "+ ((LaborCamp)fields[14]).getPrice())
 		.setRent("Rent: " + ((LaborCamp)fields[14]).getRent())
-		.setBgColor(Color.orange)
+		.setBgColor(Color.cyan)
 		.build();
 		
 		desktopFields[14] = new desktop_fields.Street.Builder()
@@ -157,7 +159,7 @@ public class GuiController {
 		desktopFields[16] = new desktop_fields.Tax.Builder()
 		.setDescription(fields[17].getFieldName())
 		.setSubText("Tax: "+ ((Tax)fields[17]).getTaxAmount() + " or 10% of your assets.")
-		.setBgColor(Color.red)
+		.setBgColor(Color.yellow)
 		.build();
 		
 		
@@ -174,21 +176,21 @@ public class GuiController {
 		.setDescription("")
 		.setSubText("Price: "+((Fleet)fields[19]).getPrice())
 		.setRent("Rent: "+((Fleet)fields[19]).getRent())
-		.setBgColor(Color.PINK)
+		.setBgColor(Color.green)
 		.build();
 		
 		desktopFields[19] = new desktop_fields.Street.Builder()
 		.setTitle(fields[20].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[20]).getPrice())
 		.setRent("Rent: " + ((Fleet)fields[20]).getRent())
-		.setBgColor(Color.PINK)
+		.setBgColor(Color.red)
 		.build();
 		
 		desktopFields[20] = new desktop_fields.Street.Builder()
 		.setTitle(fields[21].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[21]).getPrice())
 		.setRent("Rent: " + ((Fleet)fields[21]).getRent())
-		.setBgColor(Color.PINK)
+		.setBgColor(Color.magenta)
 		.build();
 		
 		GUI.create(desktopFields);
