@@ -105,4 +105,11 @@ public class Player {
 		
 
 	}
+	
+	public boolean isBankrupt() {
+		if(this.fortune <= 0)
+			return true;
+		else 
+			return false;
+}
 }
