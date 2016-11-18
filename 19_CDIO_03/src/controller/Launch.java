@@ -29,7 +29,6 @@ Cup c1 = new Cup();
 
 gc.GUIField(gb.getFields(), PL);
 
-
 while(true){
 gc.GUIaddPlayer(PL, p);
 gc.GUIDice(PL, p);

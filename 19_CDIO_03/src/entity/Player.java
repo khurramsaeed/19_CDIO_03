@@ -91,10 +91,6 @@ public class Player {
 		quantityOfLaborCamps++;
 		
 	}
-	
-	
-
-	
 
 	public int movePlayer(int move, Player player) {
 		this.currentPosition = currentPosition + move;
