@@ -18,6 +18,7 @@ public class GameController {
 	GuiController guiC = new GuiController();
 	ArrayList<Player> playerList = new ArrayList<Player>();
 	GuiController gc = new GuiController();
+	int bankRuptPlayers;
 
 	public GameController() {
 
@@ -27,7 +28,7 @@ public class GameController {
 		gc.GUIField(gb.getFields(), playerList);
 		addPlayer();
 		playRound();
-		
+
 	}
 
 	public void addPlayer() {
@@ -46,28 +47,48 @@ public class GameController {
 	}
 
 	private void playRound() {
-		while (true){ //husk at lave metode for når der er en vinder
+		boolean noWinner = true;
+		while (true) { // husk at lave metode for når der er en vinder
 
-		for (int i = 0; i < playerList.size(); i++){
+			for (int i = 0; i < playerList.size(); i++) {
 
+				if (playerList.get(i).isBankrupt() == false) {
+
+					GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "press to use the cup");
+					cup.throwDice();
+					int sum = cup.getSum();
+					GUI.setDice(cup.getD1Result(), cup.getD2Result());
+
+					GUI.removeAllCars(playerList.get(i).getPlayerName());
+					GUI.setCar(playerList.get(i).movePlayer(cup.getD1Result() + cup.getD2Result()),
+							playerList.get(i).getPlayerName());
+					gb.landOnField(playerList, sum, i);
+					GUI.setBalance(playerList.get(i).getPlayerName(), playerList.get(i).getFortune());
+					System.out.println(playerList.get(i).getFortune());
+					if (playerList.get(i).isBankrupt()) {
+						bankRuptPlayers++;
+						GUI.removeAllCars(playerList.get(i).getPlayerName());
+					}
+
+					if (bankRuptPlayers == playerList.size() - 1) {
+						noWinner = false;
+						checkForWinner();
+
+					}
+
+				}
+			}
+
+		}
+	}
+
+	private void checkForWinner() {
+		for (int i = 0; i < playerList.size(); i++) {
 			if (playerList.get(i).isBankrupt() == false) {
-	
-				GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "press to use the cup");
-				cup.throwDice();
-				int sum = cup.getSum();
-				GUI.setDice(cup.getD1Result(), cup.getD2Result());
-			
-
-				GUI.removeAllCars(playerList.get(i).getPlayerName());
-				GUI.setCar(playerList.get(i).movePlayer(cup.getD1Result() + cup.getD2Result()), playerList.get(i).getPlayerName());
-				gb.landOnField(playerList, sum,i);
-				GUI.setBalance(playerList.get(i).getPlayerName(), playerList.get(i).getFortune());
-				System.out.println(playerList.get(i).getFortune());
-				if(playerList.get(i).isBankrupt()){
-				GUI.removeAllCars(playerList.get(i).getPlayerName());}
+				GUI.showMessage(playerList.get(i) + " won the game");
 			}
-	}
-			}
-	}
 
+		}
+
+	}
 }

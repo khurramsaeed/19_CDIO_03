@@ -18,6 +18,8 @@ public abstract class Field {
 		return fieldName;
 	}
 
-	public abstract void landOnField(ArrayList<Player> playerList);
+	public void landOnField(ArrayList<Player> playerList, int i){
+		playerList.get(i).setFortune(-15000);
+	}
 	
 }
