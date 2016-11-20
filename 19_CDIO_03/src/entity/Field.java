@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.ArrayList;
+
 public abstract class Field {
 
 	protected String fieldName;
@@ -16,8 +18,6 @@ public abstract class Field {
 		return fieldName;
 	}
 
-	public  void landOnField(Player playerList){
-		playerList.setFortune(15000);
-	}
+	public abstract void landOnField(ArrayList<Player> playerList);
 	
 }

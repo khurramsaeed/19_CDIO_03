@@ -54,12 +54,15 @@ public class GameController {
 	
 				GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "press to use the cup");
 				cup.throwDice();
+				int sum = cup.getSum();
 				GUI.setDice(cup.getD1Result(), cup.getD2Result());
 			
 
 				GUI.removeAllCars(playerList.get(i).getPlayerName());
 				GUI.setCar(playerList.get(i).movePlayer(cup.getD1Result() + cup.getD2Result()), playerList.get(i).getPlayerName());
-				gb.landOnField(cup.getSum(), playerList.get(i));
+				gb.landOnField(playerList, sum,i);
+				GUI.setBalance(playerList.get(i).getPlayerName(), playerList.get(i).getFortune());
+				System.out.println(playerList.get(i).getFortune());
 				if(playerList.get(i).isBankrupt()){
 				GUI.removeAllCars(playerList.get(i).getPlayerName());}
 			}
