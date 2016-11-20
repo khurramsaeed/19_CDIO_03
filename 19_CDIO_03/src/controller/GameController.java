@@ -52,7 +52,7 @@ public class GameController {
 
 			if (playerList.get(i).isBankrupt() == false) {
 	
-				GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "Shake Dice Cup");
+				GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "press to use the cup");
 				cup.throwDice();
 				GUI.setDice(cup.getD1Result(), cup.getD2Result());
 			

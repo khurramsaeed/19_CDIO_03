@@ -16,6 +16,8 @@ public abstract class Field {
 		return fieldName;
 	}
 
-	public abstract void landOnField(Player player);
+	public  void landOnField(Player playerList){
+		playerList.setFortune(15000);
+	}
 	
 }
