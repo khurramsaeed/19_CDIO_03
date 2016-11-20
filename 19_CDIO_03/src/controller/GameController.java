@@ -19,6 +19,7 @@ public class GameController {
 	ArrayList<Player> playerList = new ArrayList<Player>();
 	GuiController gc = new GuiController();
 	int bankRuptPlayers;
+	boolean noWinner;
 
 	public GameController() {
 
@@ -47,12 +48,12 @@ public class GameController {
 	}
 
 	private void playRound() {
-		boolean noWinner = true;
-		while (true) { // husk at lave metode for når der er en vinder
+		
+		while (noWinner = true) { 
 
 			for (int i = 0; i < playerList.size(); i++) {
 
-				if (playerList.get(i).isBankrupt() == false) {
+				if (playerList.get(i).isBankrupt() != true) {
 
 					GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "press to use the cup");
 					cup.throwDice();
@@ -71,8 +72,11 @@ public class GameController {
 					}
 
 					if (bankRuptPlayers == playerList.size() - 1) {
+					
 						noWinner = false;
 						checkForWinner();
+						// Bug: vinderen slår en gang til efter han er blevet annonceret vinder: pga if-løkken i starten af for-løkken
+						
 
 					}
 

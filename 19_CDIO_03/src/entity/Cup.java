@@ -34,5 +34,32 @@ public class Cup {
 		return getD1Result() + getD2Result();
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
