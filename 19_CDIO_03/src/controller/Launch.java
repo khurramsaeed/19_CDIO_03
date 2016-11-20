@@ -19,24 +19,5 @@ public class Launch {
 		GameController gm = new GameController();
 		gm.startGame();
 		
-		
-////		GameBoard gb = new GameBoard();
-//		
-//		Player p = new Player("");
-//		PlayerList PL = new PlayerList();	
-		
-//		GuiController gc = new GuiController();
-//		gc.GUIField(gb.getFields(), PL);
-//		
-//		PL.addPlayer();
-//		
-//
-//		while (true) {
-//			gc.GUIaddPlayer(PL, p);
-//			gc.GUIDice(PL);
-//
-//		}
-//
-//	}
 
 }}

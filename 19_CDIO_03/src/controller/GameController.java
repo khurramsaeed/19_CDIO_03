@@ -85,7 +85,7 @@ public class GameController {
 	private void checkForWinner() {
 		for (int i = 0; i < playerList.size(); i++) {
 			if (playerList.get(i).isBankrupt() == false) {
-				GUI.showMessage(playerList.get(i) + " won the game");
+				GUI.showMessage("Everyone is bankrupt except you "+playerList.get(i) + ", you won the game! :D");
 			}
 
 		}
