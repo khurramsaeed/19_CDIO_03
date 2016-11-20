@@ -1,5 +1,7 @@
 package entity;
 
+import spil.Player;
+
 public class GameBoard {
 
 	private Field[] fields = new Field[22];
@@ -36,6 +38,10 @@ public class GameBoard {
 
 	public Field[] getFields() {
 		return fields;
+	}
+	
+	public void landOnField(int i, Player player){
+		fields[i].landOnField(player);
 	}
 
 }

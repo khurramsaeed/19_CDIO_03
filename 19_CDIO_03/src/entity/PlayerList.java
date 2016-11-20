@@ -10,14 +10,23 @@ import controller.GuiController;
 public class PlayerList {
 
 	ArrayList<Player> playerList = new ArrayList<Player>();
+	
+public PlayerList(){
+	
+	
+	
+	}
 
-	public void addPlayer() {
-		int bruger = GUI.getUserInteger("How many players are playing?");
+	public void addPlayer(ArrayList<Player> playerList) {
+		String choose = GUI.getUserButtonPressed("Chooce number of players","2","3","4","5","6");
+		int bruger = Integer.parseInt(choose);
 		for (int i = 0; i < bruger; i++) {
-			playerList.add(new Player(GUI.getUserString("Enter name of players")));
-			System.out.println(getPlayer(i).getFortune());
-
-		}
+			playerList.add(new Player(GUI.getUserString("Enter the name of Player "+(i+1))));
+			GUI.showMessage("Your fortune contains "+getPlayer(i).getFortune());
+			
+			}
+	
+		
 	}
 
 	public Player getPlayer(int index) {
