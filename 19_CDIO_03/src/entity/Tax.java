@@ -28,15 +28,12 @@ public class Tax extends Field {
 				taxRate = ((player.getFortune()) / 100) * 10;
 				player.setFortune(-taxRate);
 			}
-			
-			
+
 		}
-		
-		if (fieldName.equals("Goldmine")){
+
+		if (fieldName.equals("Goldmine")) {
 			player.setFortune(-2000);
 		}
-		
-		
 
 	}
 

@@ -6,19 +6,12 @@ import entity.*;
 
 import java.util.Scanner;
 
-
 public class GUI {
-	
+
 	Cup cup = new Cup();
-	
-	
-	public static void throwDice(){
-		
-		
-		
+
+	public static void throwDice() {
+
 	}
 
-
-
 }
- 

@@ -48,16 +48,17 @@ public class GameController {
 	}
 
 	private void playRound() {
-		
-		while (noWinner = true) { 
+
+		while (noWinner = true) {
 
 			for (int i = 0; i < playerList.size(); i++) {
-				
+
 				if (bankRuptPlayers == playerList.size() - 1) {
-					
+
 					noWinner = false;
 					checkForWinner();
-					// Bug: vinderen slår en gang til efter han er blevet annonceret vinder: pga if-løkken i starten af for-løkken
+					// Bug: vinderen slår en gang til efter han er blevet
+					// annonceret vinder: pga if-løkken i starten af for-løkken
 				}
 
 				if (playerList.get(i).isBankrupt() != true) {
@@ -68,8 +69,7 @@ public class GameController {
 					GUI.setDice(cup.getD1Result(), cup.getD2Result());
 
 					GUI.removeAllCars(playerList.get(i).getPlayerName());
-					GUI.setCar(playerList.get(i).movePlayer(sum),
-							playerList.get(i).getPlayerName());
+					GUI.setCar(playerList.get(i).movePlayer(sum), playerList.get(i).getPlayerName());
 					gb.landOnField(playerList.get(i));
 					GUI.setBalance(playerList.get(i).getPlayerName(), playerList.get(i).getFortune());
 					System.out.println(playerList.get(i));
@@ -78,7 +78,7 @@ public class GameController {
 						GUI.removeAllCars(playerList.get(i).getPlayerName());
 					}
 
-					//if rent > fortune: pay fortune
+				
 
 				}
 			}
@@ -89,7 +89,9 @@ public class GameController {
 	private void checkForWinner() {
 		for (int i = 0; i < playerList.size(); i++) {
 			if (playerList.get(i).isBankrupt() == false) {
-				GUI.showMessage("Everyone is bankrupt except you "+playerList.get(i) + ", you won the game! :D");
+				GUI.showMessage("Everyone is bankrupt except you " + playerList.get(i) + ", you won the game! :D");
+				GUI.getUserButtonPressed("GAME OVER, winner:"+ playerList.get(i), "Exit game");
+				System.exit(0);
 			}
 
 		}

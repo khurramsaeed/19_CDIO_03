@@ -2,7 +2,6 @@ package entity;
 
 import java.util.ArrayList;
 
-import boundary.TUI;
 
 public class Player {
 
@@ -31,9 +30,9 @@ public class Player {
 		return playerName;
 	}
 
-//	public String toString() {
-//		return playerName;
-//	}
+	// public String toString() {
+	// return playerName;
+	// }
 
 	public int getAccountBalance() {
 		return account.getBalance();
@@ -54,7 +53,6 @@ public class Player {
 
 	}
 
-
 	public void setFortune(int value) {
 		fortune = fortune + value;
 
@@ -68,31 +66,30 @@ public class Player {
 		return quantityOfFleets;
 
 	}
-	
+
 	public int getQuantityOfTerritories() {
 		return quantityOfTerritories;
 
 	}
 
-
 	public int getQuantityOfLaborCamps() {
 		return quantityOfLaborCamps;
 
 	}
-	
-	public void setQuantityOfFleets(){
+
+	public void setQuantityOfFleets() {
 		quantityOfFleets++;
-		
+
 	}
-	
-	public void setQuantityOfTerritories(){
+
+	public void setQuantityOfTerritories() {
 		quantityOfTerritories++;
-		
+
 	}
-	
-	public void setQuantityOfLaborCamps(){
+
+	public void setQuantityOfLaborCamps() {
 		quantityOfLaborCamps++;
-		
+
 	}
 
 	public int movePlayer(int move) {
@@ -100,23 +97,21 @@ public class Player {
 
 		if (currentPosition > 21) {
 			currentPosition = currentPosition - 21;
-			
-		
+
 		}
-		
+
 		return currentPosition;
-		
 
 	}
-	
-	public int getCurrentPosition(){
+
+	public int getCurrentPosition() {
 		return currentPosition;
 	}
-	
+
 	public boolean isBankrupt() {
-		if(this.fortune <= 0)
+		if (this.fortune <= 0)
 			return true;
-		else 
+		else
 			return false;
-}
+	}
 }

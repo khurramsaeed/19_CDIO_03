@@ -2,12 +2,10 @@ package entity;
 
 import java.util.ArrayList;
 
-
-
 public class GameBoard {
 
 	private Field[] fields = new Field[22];
-	
+
 	public GameBoard() {
 
 		fields[1] = new Territory("Tribe Encampment", 1000, 100);
@@ -31,7 +29,7 @@ public class GameBoard {
 		fields[19] = new Fleet("Sea Grover", 4000);
 		fields[20] = new Fleet("The Buccaneers", 4000);
 		fields[21] = new Fleet("Privateer armade", 4000);
- 
+
 	}
 
 	public int getFieldArrayLength() {
@@ -41,8 +39,8 @@ public class GameBoard {
 	public Field[] getFields() {
 		return fields;
 	}
-	
-	public void landOnField(Player player){
+
+	public void landOnField(Player player) {
 		fields[player.getCurrentPosition()].landOnField(player);
 	}
 

@@ -17,25 +17,7 @@ public class Territory extends Ownable {
 	@Override
 	public void setQuantityOfField(Player player) {
 		player.setQuantityOfTerritories();
-		
-	}
-	
-	
 
-	
-
-
-		
-
-
-	
-		
 	}
 
-	
-	
-	
-	
-	
-
-
+}
