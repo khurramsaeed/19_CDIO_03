@@ -19,13 +19,12 @@ public class LaborCamp extends Ownable {
 	
 	@Override
 	public int getRent(){
-		GUI.getUserButtonPressed("Throw dice to determine rent", "throw");
-//		c1.throwDice();
+		GUI.getUserButtonPressed("Throw dice to calculate the rent you have to pay", "throw");
+		c1.throwDice();
 		GUI.setDice(c1.getD1Result(), c1.getD2Result());
 		this.cupSum = c1.getSum();
 		
 		int rent = (baseRent * cupSum) *  (owner == null ? 0 : super.owner.getQuantityOfLaborCamps());
-		GUI.showMessage("You have to pay "+rent );
 		return rent;
 	}
 

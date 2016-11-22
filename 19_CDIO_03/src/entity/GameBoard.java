@@ -10,17 +10,17 @@ public class GameBoard {
 	
 	public GameBoard() {
 
-		fields[1] = new Territory("Tribe Encampment", 100, 1000);
-		fields[2] = new Territory("Crater", 300, 1500);
-		fields[3] = new Territory("Mountain", 500, 2000);
-		fields[4] = new Territory("Cold Desert", 700, 3000);
-		fields[5] = new Territory("Black cave", 1000, 4000);
-		fields[6] = new Territory("The Werewall", 1300, 4300);
-		fields[7] = new Territory("Mountain village", 1600, 4750);
-		fields[8] = new Territory("South Citadel", 2000, 5000);
-		fields[9] = new Territory("Palace Gates", 2600, 5500);
-		fields[10] = new Territory("Tower", 3200, 6000);
-		fields[11] = new Territory("Castle", 4000, 8000);
+		fields[1] = new Territory("Tribe Encampment", 1000, 100);
+		fields[2] = new Territory("Crater", 1500, 300);
+		fields[3] = new Territory("Mountain", 2000, 500);
+		fields[4] = new Territory("Cold Desert", 3000, 700);
+		fields[5] = new Territory("Black cave", 4000, 1000);
+		fields[6] = new Territory("The Werewall", 4300, 1300);
+		fields[7] = new Territory("Mountain village", 4750, 1600);
+		fields[8] = new Territory("South Citadel", 5000, 2000);
+		fields[9] = new Territory("Palace Gates", 5500, 2600);
+		fields[10] = new Territory("Tower", 6000, 3200);
+		fields[11] = new Territory("Castle", 8000, 4000);
 		fields[12] = new Refuge("Walled City", 5000);
 		fields[13] = new Refuge("Monastary", 500);
 		fields[14] = new LaborCamp("Huts in the mountain", 2500);

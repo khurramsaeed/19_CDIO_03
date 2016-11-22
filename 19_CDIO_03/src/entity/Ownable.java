@@ -41,17 +41,20 @@ public abstract class Ownable extends Field {
 		
 		if(checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()){
 			System.out.println("pay rent");
-			GUI.showMessage("The field ("+this.fieldName+") is owned, you have to pay "+getRent()+" int rent to " + getOwner());
+			GUI.showMessage("The field ("+this.fieldName+") is owned, you have to pay rent to " + getOwner());
+			int rent = getRent();
+			GUI.showMessage("The rent to pay is: " + rent);
 		
-			if(getRent()  > player.getFortune()){
+			if(rent  > player.getFortune()){
 				GUI.showMessage("You dont have enough, your are bankrupt! "+ getOwner() + " gets the rest of your fortune");
 				player.setFortune(-player.getFortune());
 				owner.setFortune(player.getFortune());
 				GUI.setBalance(owner.getPlayerName(), owner.getFortune());
 			}
 			else{
-			player.setFortune(-getRent());
-			owner.setFortune(getRent());
+			player.setFortune(-rent);
+			GUI.setBalance(player.getPlayerName(), player.getFortune());
+			owner.setFortune(rent);
 			GUI.setBalance(owner.getPlayerName(), owner.getFortune());
 			}
 		}

@@ -30,8 +30,8 @@ public class Cup {
 	}
 
 	public int getSum() {
-return 15;
-//		return getD1Result() + getD2Result();
+
+		return getD1Result() + getD2Result();
 
 	}
 	
