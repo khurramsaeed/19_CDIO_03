@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 import desktop_codebehind.Car;
 import desktop_fields.Street;
@@ -27,7 +28,7 @@ public class GuiController {
 	
 	Cup c1 = new Cup();
 
-	public void GUIField(Field[] fields, PlayerList player){
+	public void GUIField(Field[] fields, ArrayList<Player> playerList){
 		
 		
 		desktop_fields.Field[] desktopFields = new desktop_fields.Field[21];
@@ -225,12 +226,37 @@ public class GuiController {
 			
 			GUI.removeAllCars(players.getPlayer(i).getPlayerName());
 			GUI.setCar(p.movePlayer(d1.getFaceValue() + d2.getFaceValue()), p.getPlayerName());
+			
 		
 		
 		}
 		
+		
+		
 	}
-}
+	
+	public Color chooseColor(int NumberOfPlayers)
+	{
+		switch (NumberOfPlayers)
+		{
+		case 1:
+			return Color.BLACK;
+		case 2:
+			return Color.CYAN;
+		case 3:
+			return Color.RED;
+		case 4:
+			return Color.GREEN;
+		case 5:
+			return Color.YELLOW;
+		default:
+			return Color.PINK;
+		}
+	}
+	
+		
+	}
+
 	
 
 

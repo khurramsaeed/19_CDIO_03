@@ -2,12 +2,21 @@ package entity;
 
 public class Cup {
 
-	Dice d1 = new Dice();
-	Dice d2 = new Dice();
+	private Dice d1;
+	private Dice d2;
 
 	public Cup() {
+		
+		this.d1 = new Dice();
+		this.d2 = new Dice();
+		
+		
+	}
+	
+	public void throwDice(){
 		d1.roll();
 		d2.roll();
+		
 	}
 
 	public int getD1Result() {
@@ -25,5 +34,32 @@ public class Cup {
 		return getD1Result() + getD2Result();
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

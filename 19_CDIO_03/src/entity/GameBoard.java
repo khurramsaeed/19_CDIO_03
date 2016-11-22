@@ -1,9 +1,13 @@
 package entity;
 
+import java.util.ArrayList;
+
+import spil.Player;
+
 public class GameBoard {
 
 	private Field[] fields = new Field[22];
-
+	
 	public GameBoard() {
 
 		fields[1] = new Territory("Tribe Encampment", 100, 1000);
@@ -36,6 +40,10 @@ public class GameBoard {
 
 	public Field[] getFields() {
 		return fields;
+	}
+	
+	public void landOnField(ArrayList<Player> playerList,int cupSum,int i){
+		fields[cupSum].landOnField(playerList, i);
 	}
 
 }
