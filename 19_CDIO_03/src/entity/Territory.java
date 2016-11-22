@@ -4,8 +4,8 @@ public class Territory extends Ownable {
 
 	private int rent;
 
-	public Territory(String fieldName, int price, int rent) {
-		super(fieldName, price);
+	public Territory(String fieldName, int rent, int price) {
+		super(fieldName, rent);
 		this.rent = rent;
 	}
 

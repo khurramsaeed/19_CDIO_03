@@ -8,7 +8,7 @@ public class LaborCamp extends Ownable {
 	
 	Cup c1 = new Cup();
 
-	public LaborCamp(String fieldName, int price, int baseRent){
+	public LaborCamp(String fieldName, int price){
 		super(fieldName, price);
 		this.baseRent = 100;
 		this.cupSum =  c1.getSum();

@@ -23,8 +23,8 @@ public class GameBoard {
 		fields[11] = new Territory("Castle", 4000, 8000);
 		fields[12] = new Refuge("Walled City", 5000);
 		fields[13] = new Refuge("Monastary", 500);
-		fields[14] = new LaborCamp("Huts in the mountain", 2500, 100);
-		fields[15] = new LaborCamp("The pit", 2500, 100);
+		fields[14] = new LaborCamp("Huts in the mountain", 2500);
+		fields[15] = new LaborCamp("The pit", 2500);
 		fields[16] = new Tax("Goldmine", 2000);
 		fields[17] = new Tax("Caravan", 4000);
 		fields[18] = new Fleet("Second Sail", 4000);
