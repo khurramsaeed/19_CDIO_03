@@ -52,6 +52,13 @@ public class GameController {
 		while (noWinner = true) { 
 
 			for (int i = 0; i < playerList.size(); i++) {
+				
+				if (bankRuptPlayers == playerList.size() - 1) {
+					
+					noWinner = false;
+					checkForWinner();
+					// Bug: vinderen slår en gang til efter han er blevet annonceret vinder: pga if-løkken i starten af for-løkken
+				}
 
 				if (playerList.get(i).isBankrupt() != true) {
 
@@ -61,24 +68,17 @@ public class GameController {
 					GUI.setDice(cup.getD1Result(), cup.getD2Result());
 
 					GUI.removeAllCars(playerList.get(i).getPlayerName());
-					GUI.setCar(playerList.get(i).movePlayer(cup.getD1Result() + cup.getD2Result()),
+					GUI.setCar(playerList.get(i).movePlayer(sum),
 							playerList.get(i).getPlayerName());
-					gb.landOnField(playerList, sum, i);
+					gb.landOnField(playerList.get(i));
 					GUI.setBalance(playerList.get(i).getPlayerName(), playerList.get(i).getFortune());
-					System.out.println(playerList.get(i).getFortune());
+					System.out.println(playerList.get(i));
 					if (playerList.get(i).isBankrupt()) {
 						bankRuptPlayers++;
 						GUI.removeAllCars(playerList.get(i).getPlayerName());
 					}
 
-					if (bankRuptPlayers == playerList.size() - 1) {
-					
-						noWinner = false;
-						checkForWinner();
-						// Bug: vinderen slår en gang til efter han er blevet annonceret vinder: pga if-løkken i starten af for-løkken
-						
-
-					}
+					//if rent > fortune: pay fortune
 
 				}
 			}

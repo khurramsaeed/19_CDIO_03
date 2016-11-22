@@ -26,7 +26,7 @@ public class GuiController {
 	
 	Dice d2 = new Dice();
 	
-	Cup c1 = new Cup();
+	static Cup c1 = new Cup();
 
 	public void GUIField(Field[] fields, ArrayList<Player> playerList){
 		
@@ -139,14 +139,14 @@ public class GuiController {
 		desktopFields[13] = new desktop_fields.Street.Builder()
 		.setTitle(fields[14].getFieldName())
 		.setSubText("Price: "+ ((LaborCamp)fields[14]).getPrice())
-		.setRent("Rent: " + ((LaborCamp)fields[14]).getRent())
+//		.setRent("Rent: " + ((LaborCamp)fields[14]).getRent())
 		.setBgColor(Color.cyan)
 		.build();
 		
 		desktopFields[14] = new desktop_fields.Street.Builder()
 		.setTitle(fields[15].getFieldName())
 		.setSubText("Price: "+ ((LaborCamp)fields[15]).getPrice())
-		.setRent("Rent: " + ((LaborCamp)fields[15]).getRent())
+//		.setRent("Rent: " + ((LaborCamp)fields[15]).getRent())
 		.setBgColor(Color.orange)
 		.build();
 		
@@ -164,11 +164,12 @@ public class GuiController {
 		.build();
 		
 		
+		
 		//Fleets
 		desktopFields[17] = new desktop_fields.Street.Builder()
 		.setTitle(fields[18].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[18]).getPrice())
-		.setRent("Rent: " + ((Fleet)fields[18]).getRent())
+//		.setRent("Rent: " + ((Fleet)fields[18]).getRent())
 		.setBgColor(Color.PINK)
 		.build();
 		
@@ -176,21 +177,21 @@ public class GuiController {
 		.setTitle(fields[19].getFieldName())
 		.setDescription("")
 		.setSubText("Price: "+((Fleet)fields[19]).getPrice())
-		.setRent("Rent: "+((Fleet)fields[19]).getRent())
+//		.setRent("Rent: "+((Fleet)fields[19]).getRent())
 		.setBgColor(Color.green)
 		.build();
 		
 		desktopFields[19] = new desktop_fields.Street.Builder()
 		.setTitle(fields[20].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[20]).getPrice())
-		.setRent("Rent: " + ((Fleet)fields[20]).getRent())
+//		.setRent("Rent: " + ((Fleet)fields[20]).getRent())
 		.setBgColor(Color.red)
 		.build();
 		
 		desktopFields[20] = new desktop_fields.Street.Builder()
 		.setTitle(fields[21].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[21]).getPrice())
-		.setRent("Rent: " + ((Fleet)fields[21]).getRent())
+//		.setRent("Rent: " + ((Fleet)fields[21]).getRent())
 		.setBgColor(Color.magenta)
 		.build();
 		
@@ -200,40 +201,8 @@ public class GuiController {
 	}
 	
 
-	public void GUIaddPlayer(PlayerList players, Player p){
-		
-		for(int i = 0; i < players.PlayerListLength(); i++){
-		GUI.addPlayer(players.getPlayer(i).getPlayerName(), p.getFortune());
-		
-		
-		}
-		
-		GUI.showMessage("You will get 30000 as a starting bonus");
-	}
-	public void GUIDice(PlayerList players){
 
-		for(int i = 0; i < players.PlayerListLength(); i++){
-			
-			Player p = players.getPlayer(i);
-			
-			
-			d1.roll();
-			d2.roll();
-		
-			GUI.getUserButtonPressed(players.getPlayer(i).getPlayerName() + " Press to play", "Roll");
-			
-			GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
-			
-			GUI.removeAllCars(players.getPlayer(i).getPlayerName());
-			GUI.setCar(p.movePlayer(d1.getFaceValue() + d2.getFaceValue()), p.getPlayerName());
-			
-		
-		
-		}
-		
-		
-		
-	}
+	
 	
 	public Color chooseColor(int NumberOfPlayers)
 	{
@@ -253,6 +222,10 @@ public class GuiController {
 			return Color.PINK;
 		}
 	}
+	
+	
+	
+	
 	
 		
 	}

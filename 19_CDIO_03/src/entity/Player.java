@@ -9,7 +9,6 @@ public class Player {
 	private String playerName;
 	private Account account;
 	private boolean hasLost;
-	private boolean payAmountOrPercentage;
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
 	private int quantityOfTerritories;
@@ -32,13 +31,21 @@ public class Player {
 		return playerName;
 	}
 
-	public String toString() {
-		return playerName;
-	}
+//	public String toString() {
+//		return playerName;
+//	}
 
 	public int getAccountBalance() {
 		return account.getBalance();
 
+	}
+
+	@Override
+	public String toString() {
+		return "Player [playerName=" + playerName + ", account=" + account + ", hasLost=" + hasLost
+				+ ", quantityOfFleets=" + quantityOfFleets + ", quantityOfLaborCamps=" + quantityOfLaborCamps
+				+ ", quantityOfTerritories=" + quantityOfTerritories + ", fortune=" + fortune + ", currentPosition="
+				+ currentPosition + "]";
 	}
 
 	public boolean setPlayerHasLost(boolean lost) {
@@ -47,13 +54,9 @@ public class Player {
 
 	}
 
-	public boolean getPayAmountOrPercentage() {
-		return payAmountOrPercentage;
-
-	}
 
 	public void setFortune(int value) {
-		fortune = value + fortune;
+		fortune = fortune + value;
 
 	}
 
@@ -104,6 +107,10 @@ public class Player {
 		return currentPosition;
 		
 
+	}
+	
+	public int getCurrentPosition(){
+		return currentPosition;
 	}
 	
 	public boolean isBankrupt() {
