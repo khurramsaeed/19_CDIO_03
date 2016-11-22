@@ -29,9 +29,11 @@ public class Tax extends Field {
 				player.setFortune(-taxRate);
 			}
 			
-			else if(fieldName.equals("Goldmine")){
-				player.setFortune(-2000);
-			}
+			
+		}
+		
+		if (fieldName.equals("Goldmine")){
+			player.setFortune(-2000);
 		}
 		
 		

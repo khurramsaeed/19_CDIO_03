@@ -139,14 +139,14 @@ public class GuiController {
 		desktopFields[13] = new desktop_fields.Street.Builder()
 		.setTitle(fields[14].getFieldName())
 		.setSubText("Price: "+ ((LaborCamp)fields[14]).getPrice())
-		.setRent("Rent: " + ((LaborCamp)fields[14]).getRent())
+//		.setRent("Rent: " + ((LaborCamp)fields[14]).getRent())
 		.setBgColor(Color.cyan)
 		.build();
 		
 		desktopFields[14] = new desktop_fields.Street.Builder()
 		.setTitle(fields[15].getFieldName())
 		.setSubText("Price: "+ ((LaborCamp)fields[15]).getPrice())
-		.setRent("Rent: " + ((LaborCamp)fields[15]).getRent())
+//		.setRent("Rent: " + ((LaborCamp)fields[15]).getRent())
 		.setBgColor(Color.orange)
 		.build();
 		
@@ -223,14 +223,8 @@ public class GuiController {
 		}
 	}
 	
-	public static void throwDice(){
-		c1.throwDice();
-		GUI.setDice(c1.getD1Result(), c1.getD2Result());
-	}
 	
-	public static int getCupSum(){
-		return c1.getSum();
-	}
+	
 	
 	
 		
