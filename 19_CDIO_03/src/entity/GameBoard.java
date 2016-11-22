@@ -2,7 +2,7 @@ package entity;
 
 import java.util.ArrayList;
 
-import spil.Player;
+
 
 public class GameBoard {
 
@@ -42,8 +42,8 @@ public class GameBoard {
 		return fields;
 	}
 	
-	public void landOnField(ArrayList<Player> playerList,int cupSum,int i){
-		fields[cupSum].landOnField(playerList, i);
+	public void landOnField(Player player,int cupSum){
+		fields[cupSum].landOnField(player);
 	}
 
 }

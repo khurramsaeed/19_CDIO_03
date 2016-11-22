@@ -63,7 +63,7 @@ public class GameController {
 					GUI.removeAllCars(playerList.get(i).getPlayerName());
 					GUI.setCar(playerList.get(i).movePlayer(cup.getD1Result() + cup.getD2Result()),
 							playerList.get(i).getPlayerName());
-					gb.landOnField(playerList, sum, i);
+					gb.landOnField(playerList.get(i), sum);
 					GUI.setBalance(playerList.get(i).getPlayerName(), playerList.get(i).getFortune());
 					System.out.println(playerList.get(i).getFortune());
 					if (playerList.get(i).isBankrupt()) {

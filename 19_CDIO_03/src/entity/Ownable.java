@@ -1,5 +1,6 @@
 package entity;
 
+import desktop_resources.GUI;
 import entity.Player;
 
 public abstract class Ownable extends Field {
@@ -36,28 +37,34 @@ public abstract class Ownable extends Field {
 	}
 
 	public void landOnField(Player player) {
-
-		if (checkIfOwned() == false) {
-			buyField(player);
-			
-		} else if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
+		// TODO Auto-generated method stub
+		if(checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()){
 			player.setFortune(-getRent());
 			owner.setFortune(getRent());
 		}
+
+		else if (checkIfOwned() == false) {
+			buyFieldOption(player);
+
+		} 
+		
 	}
+
 	
 
-	public void buyField(Player buyer) {
-		if (buyer.getFortune() >= price) {
-			buyer.setFortune(getPrice());
+	public void buyFieldOption(Player buyer) {
+		boolean buyOption = GUI.getUserLeftButtonPressed("This field is not owned, do you want to buy it?", "Yes", "No");
+		if(buyOption == true && buyer.getFortune() >= price){ //skal den være størreendogligmed, eller kun ligmed?
+			buyer.setFortune(-getPrice());
 			setOwner(buyer);
 			setQuantityOfField(buyer);
-			
-			
-			
-			
+		if(buyOption == false){
+			GUI.showMessage("You chose not to buy");
+		}
+
 		}
 	}
+
 
 	public abstract int getRent();
 	
