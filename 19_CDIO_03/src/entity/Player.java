@@ -9,7 +9,6 @@ public class Player {
 	private String playerName;
 	private Account account;
 	private boolean hasLost;
-	private boolean payAmountOrPercentage;
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
 	private int quantityOfTerritories;
@@ -47,10 +46,6 @@ public class Player {
 
 	}
 
-	public boolean getPayAmountOrPercentage() {
-		return payAmountOrPercentage;
-
-	}
 
 	public void setFortune(int value) {
 		fortune = value + fortune;

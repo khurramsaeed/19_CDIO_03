@@ -39,6 +39,7 @@ public abstract class Ownable extends Field {
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
 		if(checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()){
+			GUI.showMessage("The field is owned, you have to pay rent to " + getOwner());
 			player.setFortune(-getRent());
 			owner.setFortune(getRent());
 		}
@@ -54,7 +55,7 @@ public abstract class Ownable extends Field {
 
 	public void buyFieldOption(Player buyer) {
 		boolean buyOption = GUI.getUserLeftButtonPressed("This field is not owned, do you want to buy it?", "Yes", "No");
-		if(buyOption == true && buyer.getFortune() >= price){ //skal den være størreendogligmed, eller kun ligmed?
+		if(buyOption == true && buyer.getFortune() > price){ 
 			buyer.setFortune(-getPrice());
 			setOwner(buyer);
 			setQuantityOfField(buyer);
