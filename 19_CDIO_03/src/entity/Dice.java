@@ -20,8 +20,4 @@ public class Dice {
 		this.facevalue = (int) (Math.random() * sides) + 1;
 	}
 
-	public int testRollValue(){
-		this.facevalue = (int)(Math.random()*sides) +1;
-		return facevalue;
-	}
 }
