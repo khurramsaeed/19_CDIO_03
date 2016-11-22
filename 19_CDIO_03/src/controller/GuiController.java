@@ -26,7 +26,7 @@ public class GuiController {
 	
 	Dice d2 = new Dice();
 	
-	Cup c1 = new Cup();
+	static Cup c1 = new Cup();
 
 	public void GUIField(Field[] fields, ArrayList<Player> playerList){
 		
@@ -201,40 +201,8 @@ public class GuiController {
 	}
 	
 
-	public void GUIaddPlayer(PlayerList players, Player p){
-		
-		for(int i = 0; i < players.PlayerListLength(); i++){
-		GUI.addPlayer(players.getPlayer(i).getPlayerName(), p.getFortune());
-		
-		
-		}
-		
-		GUI.showMessage("You will get 30000 as a starting bonus");
-	}
-	public void GUIDice(PlayerList players){
 
-		for(int i = 0; i < players.PlayerListLength(); i++){
-			
-			Player p = players.getPlayer(i);
-			
-			
-			d1.roll();
-			d2.roll();
-		
-			GUI.getUserButtonPressed(players.getPlayer(i).getPlayerName() + " Press to play", "Roll");
-			
-			GUI.setDice(d1.getFaceValue(), d2.getFaceValue());
-			
-			GUI.removeAllCars(players.getPlayer(i).getPlayerName());
-			GUI.setCar(p.movePlayer(d1.getFaceValue() + d2.getFaceValue()), p.getPlayerName());
-			
-		
-		
-		}
-		
-		
-		
-	}
+	
 	
 	public Color chooseColor(int NumberOfPlayers)
 	{
@@ -254,6 +222,16 @@ public class GuiController {
 			return Color.PINK;
 		}
 	}
+	
+	public static void throwDice(){
+		c1.throwDice();
+		GUI.setDice(c1.getD1Result(), c1.getD2Result());
+	}
+	
+	public static int getCupSum(){
+		return c1.getSum();
+	}
+	
 	
 		
 	}

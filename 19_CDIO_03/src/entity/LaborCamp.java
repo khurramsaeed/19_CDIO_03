@@ -17,6 +17,7 @@ public class LaborCamp extends Ownable {
 	@Override
 	public int getRent(){
 		int rent = (baseRent * cupSum) *  (owner == null ? 0 : super.owner.getQuantityOfLaborCamps());
+
 		return rent;
 	}
 

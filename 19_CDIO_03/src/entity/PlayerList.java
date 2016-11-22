@@ -2,7 +2,6 @@ package entity;
 
 import java.util.ArrayList;
 
-import boundary.TUI;
 import desktop_resources.GUI;
 import entity.Player;
 import controller.GuiController;
