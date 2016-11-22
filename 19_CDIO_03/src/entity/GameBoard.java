@@ -27,10 +27,10 @@ public class GameBoard {
 		fields[15] = new LaborCamp("The pit", 2500, 100);
 		fields[16] = new Tax("Goldmine", 2000);
 		fields[17] = new Tax("Caravan", 4000);
-		fields[18] = new Fleet("Second Sail", 4000, 500);
-		fields[19] = new Fleet("Sea Grover", 4000, 500);
-		fields[20] = new Fleet("The Buccaneers", 4000, 500);
-		fields[21] = new Fleet("Privateer armade", 4000, 500);
+		fields[18] = new Fleet("Second Sail", 4000);
+		fields[19] = new Fleet("Sea Grover", 4000);
+		fields[20] = new Fleet("The Buccaneers", 4000);
+		fields[21] = new Fleet("Privateer armade", 4000);
  
 	}
 
@@ -42,8 +42,8 @@ public class GameBoard {
 		return fields;
 	}
 	
-	public void landOnField(Player player,int cupSum){
-		fields[cupSum].landOnField(player);
+	public void landOnField(Player player){
+		fields[player.getCurrentPosition()].landOnField(player);
 	}
 
 }

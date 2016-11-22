@@ -5,7 +5,7 @@ import desktop_resources.GUI;
 public class Tax extends Field {
 
 	private int taxAmount;
-	private int taxRate = -1; // hvorfor -1?
+	private int taxRate; // hvorfor -1?
 
 	public Tax(String fieldName, int taxAmount) {
 		super(fieldName);
@@ -24,7 +24,7 @@ public class Tax extends Field {
 				player.setFortune(-taxAmount);
 			}
 
-			else if (choosePayment == false) {
+			else if (choosePayment != false) {
 				taxRate = ((player.getFortune()) / 100) * 10;
 				player.setFortune(-taxRate);
 			}

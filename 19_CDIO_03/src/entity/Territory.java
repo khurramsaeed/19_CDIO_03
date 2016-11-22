@@ -2,7 +2,7 @@ package entity;
 
 public class Territory extends Ownable {
 
-	protected int rent;
+	private int rent;
 
 	public Territory(String fieldName, int price, int rent) {
 		super(fieldName, price);

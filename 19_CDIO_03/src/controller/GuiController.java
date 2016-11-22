@@ -164,11 +164,12 @@ public class GuiController {
 		.build();
 		
 		
+		
 		//Fleets
 		desktopFields[17] = new desktop_fields.Street.Builder()
 		.setTitle(fields[18].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[18]).getPrice())
-		.setRent("Rent: " + ((Fleet)fields[18]).getRent())
+//		.setRent("Rent: " + ((Fleet)fields[18]).getRent())
 		.setBgColor(Color.PINK)
 		.build();
 		
@@ -176,21 +177,21 @@ public class GuiController {
 		.setTitle(fields[19].getFieldName())
 		.setDescription("")
 		.setSubText("Price: "+((Fleet)fields[19]).getPrice())
-		.setRent("Rent: "+((Fleet)fields[19]).getRent())
+//		.setRent("Rent: "+((Fleet)fields[19]).getRent())
 		.setBgColor(Color.green)
 		.build();
 		
 		desktopFields[19] = new desktop_fields.Street.Builder()
 		.setTitle(fields[20].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[20]).getPrice())
-		.setRent("Rent: " + ((Fleet)fields[20]).getRent())
+//		.setRent("Rent: " + ((Fleet)fields[20]).getRent())
 		.setBgColor(Color.red)
 		.build();
 		
 		desktopFields[20] = new desktop_fields.Street.Builder()
 		.setTitle(fields[21].getFieldName())
 		.setSubText("Price: "+ ((Fleet)fields[21]).getPrice())
-		.setRent("Rent: " + ((Fleet)fields[21]).getRent())
+//		.setRent("Rent: " + ((Fleet)fields[21]).getRent())
 		.setBgColor(Color.magenta)
 		.build();
 		

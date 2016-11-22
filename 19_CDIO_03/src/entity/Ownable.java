@@ -5,7 +5,7 @@ import entity.Player;
 
 public abstract class Ownable extends Field {
 
-	protected int price;
+	private int price;
 	protected Player owner;
 
 	public Ownable(String fieldName, int price) {
@@ -23,28 +23,31 @@ public abstract class Ownable extends Field {
 	}
 
 	public void setOwner(Player newOwner) {
-		newOwner = owner;
+		owner = newOwner;
 
 	}
-
+	
 	public boolean checkIfOwned() {
-		if (owner == null) {
+		if(owner == null)
 			return false;
-		} else { 
+		else 
 			return true;
-		}
+}
 
-	}
+	
 
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
+		
 		if(checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()){
-			GUI.showMessage("The field is owned, you have to pay rent to " + getOwner());
+			System.out.println("pay rent");
+			GUI.showMessage("The field ("+this.fieldName+") is owned, you have to pay "+getRent()+" int rent to " + getOwner());
 			player.setFortune(-getRent());
 			owner.setFortune(getRent());
 		}
 
-		else if (checkIfOwned() == false) {
+		else if (checkIfOwned() != true) {
+			System.out.println("buy option");
 			buyFieldOption(player);
 
 		} 
@@ -54,17 +57,17 @@ public abstract class Ownable extends Field {
 	
 
 	public void buyFieldOption(Player buyer) {
-		boolean buyOption = GUI.getUserLeftButtonPressed("This field is not owned, do you want to buy it?", "Yes", "No");
-		if(buyOption == true && buyer.getFortune() > price){ 
+		boolean buyOption = GUI.getUserLeftButtonPressed("This field ("+fieldName+") is not owned, do you want to buy it for "+getPrice()+" coins?", "Yes", "No");
+		if(buyOption == true && buyer.getFortune() > getPrice()){ 
 			buyer.setFortune(-getPrice());
 			setOwner(buyer);
-			setQuantityOfField(buyer);
-		if(buyOption == false){
-			GUI.showMessage("You chose not to buy");
+			setQuantityOfField(buyer);}
+			else if (buyOption != true){GUI.showMessage("You chose not to buy");
+			}
 		}
 
-		}
-	}
+		
+	
 
 
 	public abstract int getRent();
