@@ -1,5 +1,6 @@
 package entity;
 
+import boundary.GuiBoundary;
 import controller.GuiController;
 import desktop_resources.GUI;
 
@@ -18,9 +19,12 @@ public class LaborCamp extends Ownable {
 
 	@Override
 	public int getRent() {
-		GUI.getUserButtonPressed("Throw dice to calculate the rent you have to pay", "throw");
+		GuiBoundary.laborCampButton();
+		
 		c1.throwDice();
+		
 		GUI.setDice(c1.getD1Result(), c1.getD2Result());
+		
 		this.cupSum = c1.getSum();
 
 		int rent = (baseRent * cupSum) * (owner == null ? 0 : super.owner.getQuantityOfLaborCamps());

@@ -12,7 +12,6 @@ import entity.Field;
 import entity.Fleet;
 import entity.LaborCamp;
 import entity.Player;
-import entity.PlayerList;
 import entity.Refuge;
 import entity.Tax;
 import entity.Territory;
@@ -20,13 +19,7 @@ import entity.Dice;
 
 public class GuiController {
 
-	Dice d1 = new Dice();
-
-	Dice d2 = new Dice();
-
-	static Cup c1 = new Cup();
-
-	public void GUIField(Field[] fields, ArrayList<Player> playerList) {
+	public void GUIField(Field[] fields) {
 
 		desktop_fields.Field[] desktopFields = new desktop_fields.Field[21];
 
