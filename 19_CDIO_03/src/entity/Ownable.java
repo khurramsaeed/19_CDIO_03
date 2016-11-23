@@ -47,8 +47,7 @@ public abstract class Ownable extends Field {
 			if (rent > player.getFortune()) {
 				int remainingFortune = player.getFortune();
 				
-				GUI.showMessage(
-						"You dont have enough, your are bankrupt! " + getOwner() + " gets the rest of your fortune");
+				GuiBoundary.bankrupt(getOwner());
 				player.setFortune(-remainingFortune);
 				GUI.setBalance(player.getPlayerName(), player.getFortune());
 				owner.setFortune(remainingFortune);
