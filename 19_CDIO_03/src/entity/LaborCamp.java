@@ -1,39 +1,39 @@
 package entity;
 
+import boundary.GuiBoundary;
+import controller.GuiController;
+import desktop_resources.GUI;
+
 public class LaborCamp extends Ownable {
 
 	private int baseRent;
-	private int rent;
 	private int cupSum;
-	private int quantityOfLaborCamp;
-	
-	Cup c1 = new Cup();
+	private Cup c1 = new Cup();
 
-	public LaborCamp(String fieldName, int price, int baseRent) {
+	public LaborCamp(String fieldName, int price) {
 		super(fieldName, price);
 		this.baseRent = 100;
-		this.quantityOfLaborCamp = 1;
-		this.cupSum =  c1.getSum();
-	}
-	
 
+	}
 
 	@Override
 	public int getRent() {
+		GuiBoundary.laborCampButton();
 		
+		c1.throwDice();
 		
-		int rent = (baseRent * cupSum) * quantityOfLaborCamp;
-		this.rent = rent;
+		GUI.setDice(c1.getD1Result(), c1.getD2Result());
+		
+		this.cupSum = c1.getSum();
+
+		int rent = (baseRent * cupSum) * (owner == null ? 0 : super.owner.getQuantityOfLaborCamps());
 		return rent;
 	}
 
 	@Override
-		public void setQuantityOfField(Player player) {
-			player.setQuantityOfLaborCamps();
-			
-		}
+	public void setQuantityOfFields(Player player) {
+		player.setQuantityOfLaborCamps();
 
-		
 	}
 
-
+}

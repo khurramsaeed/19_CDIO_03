@@ -2,7 +2,7 @@ package entity;
 
 public class Territory extends Ownable {
 
-	protected int rent;
+	private int rent;
 
 	public Territory(String fieldName, int price, int rent) {
 		super(fieldName, price);
@@ -15,27 +15,9 @@ public class Territory extends Ownable {
 	}
 
 	@Override
-	public void setQuantityOfField(Player player) {
+	public void setQuantityOfFields(Player player) {
 		player.setQuantityOfTerritories();
-		
-	}
-	
-	
 
-	
-
-
-		
-
-
-	
-		
 	}
 
-	
-	
-	
-	
-	
-
-
+}

@@ -1,31 +1,48 @@
 package entity;
 
+import boundary.GuiBoundary;
+import desktop_resources.GUI;
+
 public class Tax extends Field {
 
 	private int taxAmount;
-	private int taxRate = -1; //hvorfor -1?
+	private int taxRate;
 
 	public Tax(String fieldName, int taxAmount) {
 		super(fieldName);
 		this.taxAmount = taxAmount;
 
 	}
-	
-	
+
 	@Override
 	public void landOnField(Player player) {
-		taxRate = ((player.getFortune()) / 100) * 10;
+		if (fieldName.equals("Caravan")) {
+			boolean choosePayment = GuiBoundary.taxAmountButton(fieldName);
+				if (choosePayment == true) {
+					GuiBoundary.taxFixedAmount(taxAmount);
+					player.setFortune(-taxAmount);
+					GUI.setBalance(player.getPlayerName(), player.getFortune());
+				}
 
-		if (player.getPayAmountOrPercentage() == true) {
-			player.setFortune(taxAmount);
-		} else if (player.getPayAmountOrPercentage() == false) {
-			player.setFortune(taxRate);
+		else if (choosePayment != true){
+				taxRate = ((player.getFortune()) / 100) * 10;
+				GuiBoundary.taxTenPercent(taxRate);
+				player.setFortune(-taxRate);
+				GUI.setBalance(player.getPlayerName(), player.getFortune());
+			}
+
+		}
+
+		else /*(fieldName.equals("Goldmine"))*/ {
+			GuiBoundary.taxGoldMine(fieldName, taxAmount);
+			player.setFortune(-taxAmount);
+			GUI.setBalance(player.getPlayerName(), player.getFortune());
 		}
 
 	}
-	
-	public int getTaxAmount(){
-	
+
+	public int getTaxAmount() {
+
 		return taxAmount;
 	}
 }
