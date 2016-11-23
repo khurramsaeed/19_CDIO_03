@@ -47,6 +47,7 @@ public class GameController {
 		}
 	}
 
+	
 	private void playRound() {
 
 		while (noWinner = true) {
@@ -54,7 +55,6 @@ public class GameController {
 			for (int i = 0; i < playerList.size(); i++) {
 
 				if (bankRuptPlayers == playerList.size() - 1) {
-
 					noWinner = false;
 					checkForWinner();
 					// Bug: vinderen slår en gang til efter han er blevet
@@ -62,7 +62,6 @@ public class GameController {
 				}
 
 				if (playerList.get(i).isBankrupt() != true) {
-
 					GUI.getUserButtonPressed(playerList.get(i).getPlayerName() + "'s turn.", "press to use the cup");
 					cup.throwDice();
 					int sum = cup.getSum();
@@ -77,13 +76,13 @@ public class GameController {
 						bankRuptPlayers++;
 						GUI.removeAllCars(playerList.get(i).getPlayerName());
 					}
-
-				
-
+					
 				}
+				
 			}
-
+			
 		}
+		
 	}
 
 	private void checkForWinner() {

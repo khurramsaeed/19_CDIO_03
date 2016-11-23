@@ -44,10 +44,13 @@ public abstract class Ownable extends Field {
 			GUI.showMessage("The rent to pay is: " + rent);
 
 			if (rent > player.getFortune()) {
+				int remainingFortune = player.getFortune();
+				
 				GUI.showMessage(
 						"You dont have enough, your are bankrupt! " + getOwner() + " gets the rest of your fortune");
-				player.setFortune(-player.getFortune());
-				owner.setFortune(player.getFortune());
+				player.setFortune(-remainingFortune);
+				GUI.setBalance(player.getPlayerName(), player.getFortune());
+				owner.setFortune(remainingFortune);
 				GUI.setBalance(owner.getPlayerName(), owner.getFortune());
 			} else {
 				player.setFortune(-rent);
@@ -60,23 +63,35 @@ public abstract class Ownable extends Field {
 		else if (checkIfOwned() != true) {
 			System.out.println("buy option");
 			buyFieldOption(player);
+			
+			
+			}
 
 		}
 
-	}
-
+	
 	public void buyFieldOption(Player buyer) {
-		boolean buyOption = GUI.getUserLeftButtonPressed(
-				"This field (" + fieldName + ") is not owned, do you want to buy it for " + getPrice() + " coins?",
-				"Yes", "No");
-		if (buyOption == true && buyer.getFortune() > getPrice()) {
-			buyer.setFortune(-getPrice());
-			setOwner(buyer);
-			setQuantityOfField(buyer);
-		} else if (buyOption != true) {
-			GUI.showMessage("You chose not to buy");
+		
+		if(buyer.getFortune() < getPrice()){
+			GUI.showMessage("The field is not owned, but you dont have enough to buy, SORRY!");
+			}
+		
+		if (buyer.getFortune() > getPrice()) {
+			boolean buyOption = GUI.getUserLeftButtonPressed(
+					"This field (" + fieldName + ") is not owned, do you want to buy it for " + getPrice() + " coins?",
+					"Yes", "No");
+			if (buyOption == true) {
+				buyer.setFortune(-getPrice());
+				setOwner(buyer);
+				setQuantityOfField(buyer);
+			} else if (buyOption != true) {
+				GUI.showMessage("You chose not to buy");
+			}
+
 		}
+
 	}
+	
 
 	public abstract int getRent();
 

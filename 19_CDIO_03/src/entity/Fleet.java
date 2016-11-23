@@ -7,9 +7,7 @@ public class Fleet extends Ownable {
 	private int Rent_3 = 2000;
 	private int Rent_4 = 4000;
 
-	public Fleet(String fieldName, int price) { // skal der være rent i
-												// paramteren? - Getprice
-												// metode? -1?
+	public Fleet(String fieldName, int price) { 
 		super(fieldName, price);
 	}
 
