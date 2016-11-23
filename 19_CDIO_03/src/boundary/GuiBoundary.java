@@ -32,7 +32,7 @@ public class GuiBoundary{
 		GUI.showMessage("Everyone is bankrupt except you " + player + ", you won the game! :D");
 	}
 	
-	public String exitGame(Player player){
+	public static String exitGame(Player player){
 		return GUI.getUserButtonPressed("GAME OVER, winner:"+ player, "Exit game");
 		
 	}

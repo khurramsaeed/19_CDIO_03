@@ -35,12 +35,12 @@ public class GameController {
 	}
 
 	private void addPlayer() {
-		String chooseNumberOfPlayers = guiB.numberOfPlayers();
+		String chooseNumberOfPlayers = GuiBoundary.numberOfPlayers();
 		int NumberOfPlayers = Integer.parseInt(chooseNumberOfPlayers);
 		for (int i = 0; i < NumberOfPlayers; i++) {
-			playerList.add(new Player(guiB.userInputString(i)));
+			playerList.add(new Player(GuiBoundary.userInputString(i)));
 
-			guiB.showFortune(playerList.get(i).getFortune());
+			GuiBoundary.showFortune(playerList.get(i).getFortune());
 			Car[] cars = new Car[NumberOfPlayers];
 			cars[i] = new Car.Builder().typeRacecar().primaryColor(guiC.chooseColor(i)).build();
 
@@ -64,7 +64,7 @@ public class GameController {
 				}
 
 				if (playerList.get(i).isBankrupt() != true) {
-					guiB.playerName(playerList.get(i).getPlayerName());
+					GuiBoundary.playerName(playerList.get(i).getPlayerName());
 					cup.throwDice();
 					int sum = cup.getSum();
 					GUI.setDice(cup.getD1Result(), cup.getD2Result());
@@ -90,8 +90,8 @@ public class GameController {
 	private void checkForWinner() {
 		for (int i = 0; i < playerList.size(); i++) {
 			if (playerList.get(i).isBankrupt() == false) {
-				guiB.winnerMessage(playerList.get(i));
-				guiB.exitGame(playerList.get(i));
+				GuiBoundary.winnerMessage(playerList.get(i));
+				GuiBoundary.exitGame(playerList.get(i));
 				System.exit(0);
 			}
 
