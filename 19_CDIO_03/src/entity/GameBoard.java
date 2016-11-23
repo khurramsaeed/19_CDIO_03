@@ -32,9 +32,7 @@ public class GameBoard {
 
 	}
 
-	public int getFieldArrayLength() {
-		return fields.length;
-	}
+	
 
 	public Field[] getFields() {
 		return fields;

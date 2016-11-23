@@ -28,7 +28,7 @@ public class Fleet extends Ownable {
 	}
 
 	@Override
-	public void setQuantityOfField(Player player) {
+	public void setQuantityOfFields(Player player) {
 		player.setQuantityOfFleets();
 
 	}

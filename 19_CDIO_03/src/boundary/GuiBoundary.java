@@ -9,27 +9,26 @@ import java.util.Scanner;
 
 public class GuiBoundary{
 
-	Cup cup = new Cup();
 
-	public String numberOfPlayers() {
+	public static String numberOfPlayers() {
 		
 		return GUI.getUserButtonPressed("Choose number of players", "2", "3", "4", "5", "6");
 
 	}
 	
-	public String userInputString(int i){
+	public static String userInputString(int i){
 		return GUI.getUserString("Enter the name of Player " + (i + 1));
 	}
 
-	public void showFortune(int i){
+	public static void showFortune(int i){
 		GUI.showMessage("Your fortune contains "  + i);
 	}
 	
-	public String playerName(String name){
+	public static String playerName(String name){
 		return GUI.getUserButtonPressed(name + "'s turn.", "press to use the cup");
 	}
 	
-	public void winnerMessage(Player player){
+	public static void winnerMessage(Player player){
 		GUI.showMessage("Everyone is bankrupt except you " + player + ", you won the game! :D");
 	}
 	

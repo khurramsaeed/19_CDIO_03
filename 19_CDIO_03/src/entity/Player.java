@@ -7,7 +7,6 @@ public class Player {
 
 	private String playerName;
 	private Account account;
-//	private boolean hasLost; bruges ikke
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
 	private int quantityOfTerritories;
@@ -18,7 +17,6 @@ public class Player {
 
 		this.playerName = playerName;
 		account = new Account(30000);
-//		hasLost = false; bruges ikke
 		quantityOfFleets = 0;
 		quantityOfLaborCamps = 0;
 		quantityOfTerritories = 0;
@@ -41,17 +39,10 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [playerName=" + playerName + ", account=" + account + /*", hasLost=" + hasLost: bruges ikke
-				+*/ ", quantityOfFleets=" + quantityOfFleets + ", quantityOfLaborCamps=" + quantityOfLaborCamps
+		return "Player [playerName=" + playerName + ", account=" + account + ", quantityOfFleets=" + quantityOfFleets + ", quantityOfLaborCamps=" + quantityOfLaborCamps
 				+ ", quantityOfTerritories=" + quantityOfTerritories + ", fortune=" + fortune + ", currentPosition="
 				+ currentPosition + "]";
 	}
-
-//	public boolean setPlayerHasLost(boolean lost) { bruges ikke
-//		hasLost = lost;
-//		return lost;
-//
-//	}
 
 	public void setFortune(int value) {
 		fortune = fortune + value;

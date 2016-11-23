@@ -8,8 +8,7 @@ public class LaborCamp extends Ownable {
 
 	private int baseRent;
 	private int cupSum;
-
-	Cup c1 = new Cup();
+	private Cup c1 = new Cup();
 
 	public LaborCamp(String fieldName, int price) {
 		super(fieldName, price);
@@ -32,7 +31,7 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
-	public void setQuantityOfField(Player player) {
+	public void setQuantityOfFields(Player player) {
 		player.setQuantityOfLaborCamps();
 
 	}

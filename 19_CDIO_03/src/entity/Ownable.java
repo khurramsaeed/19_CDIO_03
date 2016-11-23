@@ -18,16 +18,16 @@ public abstract class Ownable extends Field {
 		return price;
 	}
 
-	public Player getOwner() {
+	private Player getOwner() {
 		return owner;
 	}
 
-	public void setOwner(Player newOwner) {
+	private void setOwner(Player newOwner) {
 		owner = newOwner;
 
 	}
 
-	public boolean checkIfOwned() {
+	private boolean checkIfOwned() {
 		if (owner == null)
 			return false;
 		else
@@ -70,7 +70,7 @@ public abstract class Ownable extends Field {
 		}
 
 	
-	public void buyFieldOption(Player buyer) {
+	private void buyFieldOption(Player buyer) {
 		
 		if(buyer.getFortune() < getPrice()){
 			GUI.showMessage("The field is not owned, but you dont have enough to buy, SORRY!");
@@ -83,7 +83,7 @@ public abstract class Ownable extends Field {
 			if (buyOption == true) {
 				buyer.setFortune(-getPrice());
 				setOwner(buyer);
-				setQuantityOfField(buyer);
+				setQuantityOfFields(buyer);
 			} else if (buyOption != true) {
 				GUI.showMessage("You chose not to buy");
 			}
@@ -95,6 +95,6 @@ public abstract class Ownable extends Field {
 
 	public abstract int getRent();
 
-	public abstract void setQuantityOfField(Player player);
+	public abstract void setQuantityOfFields(Player player);
 
 }
