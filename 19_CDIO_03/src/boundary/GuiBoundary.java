@@ -65,4 +65,29 @@ public class GuiBoundary{
 		
 	}
 	
+	//Ownable 
+	
+	public static void payRent(String i, Player player){
+		GUI.showMessage("The field (" + i + ") is owned, you have to pay rent to " + player);
+	}
+	
+	public static void showRent(int i){
+		GUI.showMessage("The rent to pay is: " + i);
+	}
+	
+	public static void bankrupt(Player player){
+		GUI.showMessage("You dont have enough, your are bankrupt! " + player + " gets the rest of your fortune");
+	}
+	
+	public static void notEnoughMoney(){
+		GUI.showMessage("The field is not owned, but you dont have enough to buy, SORRY!");
+	}
+	public static boolean buyFieldButton(String i, int j){
+		return GUI.getUserLeftButtonPressed("This field (" + i + ") is not owned, do you want to buy it for " + j + " coins?",
+				"Yes", "No");
+	}
+	
+	public static void notBought(){
+		GUI.showMessage("You chose not to buy");
+	}
 }

@@ -1,5 +1,6 @@
 package entity;
 
+import boundary.GuiBoundary;
 import desktop_resources.GUI;
 import entity.Player;
 
@@ -39,9 +40,9 @@ public abstract class Ownable extends Field {
 
 		if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
 			System.out.println("pay rent");
-			GUI.showMessage("The field (" + this.fieldName + ") is owned, you have to pay rent to " + getOwner());
+			GuiBoundary.payRent(this.fieldName, owner);
 			int rent = getRent();
-			GUI.showMessage("The rent to pay is: " + rent);
+			GuiBoundary.showRent(rent);
 
 			if (rent > player.getFortune()) {
 				int remainingFortune = player.getFortune();
@@ -73,23 +74,20 @@ public abstract class Ownable extends Field {
 	private void buyFieldOption(Player buyer) {
 		
 		if(buyer.getFortune() < getPrice()){
-			GUI.showMessage("The field is not owned, but you dont have enough to buy, SORRY!");
-			}
-		
+			GuiBoundary.notEnoughMoney();
+		}
 		if (buyer.getFortune() > getPrice()) {
-			boolean buyOption = GUI.getUserLeftButtonPressed(
-					"This field (" + fieldName + ") is not owned, do you want to buy it for " + getPrice() + " coins?",
-					"Yes", "No");
+			boolean buyOption = GuiBoundary.buyFieldButton(fieldName, getPrice());
+	
 			if (buyOption == true) {
 				buyer.setFortune(-getPrice());
 				setOwner(buyer);
 				setQuantityOfFields(buyer);
 			} else if (buyOption != true) {
-				GUI.showMessage("You chose not to buy");
+				GuiBoundary.notBought();
 			}
 
 		}
-
 	}
 	
 
