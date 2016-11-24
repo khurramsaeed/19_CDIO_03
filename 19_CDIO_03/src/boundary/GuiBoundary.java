@@ -1,11 +1,8 @@
 package boundary;
 
-import desktop_fields.Field;
 import desktop_resources.GUI;
-import controller.GameController;
 import entity.*;
 
-import java.util.Scanner;
 
 public class GuiBoundary{
 

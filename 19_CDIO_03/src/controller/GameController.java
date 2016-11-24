@@ -1,15 +1,9 @@
 package controller;
 
-import java.awt.Color;
 import java.util.ArrayList;
-
 import boundary.GuiBoundary;
 import desktop_codebehind.Car;
-import desktop_fields.Field;
-import desktop_fields.Start.Builder;
 import desktop_resources.GUI;
-import desktop_fields.*;
-
 import entity.*;
 
 public class GameController {
@@ -17,7 +11,6 @@ public class GameController {
 
 	private Cup cup = new Cup();
 	private GuiController guiC = new GuiController();
-	private GuiBoundary guiB = new GuiBoundary();
 	private ArrayList<Player> playerList = new ArrayList<Player>();
 	private GuiController gc = new GuiController();
 	private int bankRuptPlayers;
