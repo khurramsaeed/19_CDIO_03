@@ -8,8 +8,8 @@ public class GameBoard {
 
 	public GameBoard() {
 
-		fields[1] = new Territory("Tribe Encampment", 1000, 21000);
-		fields[2] = new Territory("Crater", 1500, 8000);
+		fields[1] = new Territory("Tribe Encampment", 1000, 100);
+		fields[2] = new Territory("Crater", 1500, 300);
 		fields[3] = new Territory("Mountain", 2000, 500);
 		fields[4] = new Territory("Cold Desert", 3000, 700);
 		fields[5] = new Territory("Black cave", 4000, 1000);
