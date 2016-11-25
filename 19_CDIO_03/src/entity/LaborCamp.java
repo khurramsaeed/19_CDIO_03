@@ -1,7 +1,6 @@
 package entity;
 
 import boundary.GuiBoundary;
-import controller.GuiController;
 import desktop_resources.GUI;
 
 public class LaborCamp extends Ownable {
