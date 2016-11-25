@@ -11,33 +11,16 @@ import org.junit.Test;
 
 public class TerritoryTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
 	 /**
      * Test of getRent method, of class Territory.
      */
     @Test
     public void testGetRent() {
         System.out.println("getRent");
-        Territory instance = null;
-        int expResult = 0;
+        Territory instance = new Territory("TestTerritory", 1, 1);
+        int expResult = 1;
         int result = instance.getRent();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -46,11 +29,12 @@ public class TerritoryTest {
     @Test
     public void testSetQuantityOfFields() {
         System.out.println("setQuantityOfFields");
-        Player player = null;
-        Territory instance = null;
+        Player player = new Player("TestPlayer");
+        Territory instance = new Territory("TestTerritory", 1, 1);
         instance.setQuantityOfFields(player);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expResult = player.getQuantityOfTerritories();
+        int result = 1;
+        assertEquals(expResult, result);
     }
 
 }
