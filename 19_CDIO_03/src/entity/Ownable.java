@@ -38,6 +38,12 @@ public abstract class Ownable extends Field {
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
 
+		if (checkIfOwned() == true && owner.isBankrupt()){
+			GUI.showMessage("This field was owned, but the previous owner is bankrupt, therefor you get the oppurtunity to buy");
+			setOwner(null);
+		}
+		
+		
 		if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
 			System.out.println("pay rent");
 			GuiBoundary.payRent(this.fieldName, owner);
