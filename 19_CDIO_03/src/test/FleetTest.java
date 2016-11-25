@@ -13,9 +13,7 @@ public class FleetTest {
 
 
 
-	   /**
-     * Test of getRent method, of class Fleet.
-     */
+	  
 	//test of LandOnField, when field is not owned, and player choose to buy
     @Test
     public void testLandOnFleet() {

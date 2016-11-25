@@ -11,9 +11,7 @@ import org.junit.Test;
 
 public class LaborCampTest {
 
-	  /**
-     * Test of getRent method, of class LaborCamp.
-     */
+	  
     @Test //test of LandOnField, when field is not owned, and player choose to buy
     public void testLandOnLaborCamp(){
 
