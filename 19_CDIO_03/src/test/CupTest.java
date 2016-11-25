@@ -45,6 +45,7 @@ public class CupTest {
     @Test
     public void testGetSum() {
         Cup instance = new Cup();
+        instance.throwDice();
         int result = instance.getSum();
         if (result > 12 || result < 2) {
         	fail("Terningen er ikke begrænset mellem 12 og 2");
