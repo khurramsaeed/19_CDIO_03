@@ -17,11 +17,10 @@ public class FieldTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Field instance = null;
-        String expResult = "";
+        Field instance = new Territory("Test", 1, 1);
+        String expResult = "Test";
         String result = instance.toString();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -30,20 +29,11 @@ public class FieldTest {
     @Test
     public void testLandOnField() {
         System.out.println("landOnField");
-        Player player = null;
-        Field instance = null;
+        Player player = new Player("TestPlayer");
+        Field instance = new Tax("TestName", 1);
         instance.landOnField(player);
-        fail("The test case is a prototype.");
+        fail("Didn't landOnField");
     }
 
-    public class FieldImpl extends Field {
-
-        public FieldImpl() {
-            super("");
-        }
-
-        public void landOnField(Player player) {
-        }
-    }
 
 }
