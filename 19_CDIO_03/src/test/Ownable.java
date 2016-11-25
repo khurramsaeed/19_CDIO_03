@@ -11,29 +11,11 @@ import org.junit.Test;
 
 public class Ownable {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-
     /**
      * Test of getPrice method, of class Ownable.
      */
     @Test
     public void testGetPrice() {
-        System.out.println("getPrice");
         Ownable instance = null;
         int expResult = 0;
         int result = instance.getPrice();

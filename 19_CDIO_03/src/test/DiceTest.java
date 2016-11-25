@@ -11,44 +11,44 @@ import org.junit.Test;
 
 public class DiceTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	   @Test
-	    public void testGetFaceValue() {
-	        System.out.println("getFaceValue");
-	        Dice instance = new Dice();
-	        int expResult = 0;
-	        int result = instance.getFaceValue();
-	        assertEquals(expResult, result);
-	        // TODO review the generated test code and remove the default call to fail.
-	        fail("The test case is a prototype.");
-	    }
-
 	    /**
 	     * Test of roll method, of class Dice.
 	     */
 	    @Test
 	    public void testRoll() {
-	        System.out.println("roll");
-	        Dice instance = new Dice();
-	        instance.roll();
-	        // TODO review the generated test code and remove the default call to fail.
-	        fail("The test case is a prototype.");
-	    }
-	    
+	            int tal1=0;
+	            int tal2=0;
+	            int tal3=0;
+	            int tal4=0;
+	            int tal5=0;
+	            int tal6=0;        
+	            Dice instance = new Dice();
+	            for(int i=0;i<=1000000;i++){
+	            instance.roll();
+	            int result = instance.getFaceValue();
+	              if(result==1){
+	                  tal1++;
+	              }
+	              
+	              if(result==2){
+	                  tal2++;
+	              }
+	              if(result==3){
+	                  tal3++;
+	              }
+	              if(result==4){
+	                  tal4++;
+	              }
+	              if(result==5){
+	                  tal5++;
+	              }
+	              if(result==6){
+	                  tal6++;
+	              }
+	           }
+	            System.out.println(tal1+" "+tal2+" "+tal3+" "+tal4+" "+tal5+" "+tal6);
+	        }
 
-}
+
+	    }
+	   

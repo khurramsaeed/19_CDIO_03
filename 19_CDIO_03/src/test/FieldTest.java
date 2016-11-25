@@ -11,22 +11,6 @@ import org.junit.Test;
 
 public class FieldTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	 /**
      * Test of toString method, of class Field.
      */
@@ -37,7 +21,6 @@ public class FieldTest {
         String expResult = "";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
@@ -50,7 +33,6 @@ public class FieldTest {
         Player player = null;
         Field instance = null;
         instance.landOnField(player);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 

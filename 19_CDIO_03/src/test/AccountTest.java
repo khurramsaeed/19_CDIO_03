@@ -17,12 +17,11 @@ public class AccountTest {
     @Test
     public void testGetBalance() {
         System.out.println("getBalance");
-        Account instance = null;
-        int expResult = 0;
+        Account instance = new Account(30000);
+        int expResult = 30000;
         int result = instance.getBalance();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
 }

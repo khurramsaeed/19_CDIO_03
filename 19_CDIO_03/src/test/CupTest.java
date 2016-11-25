@@ -11,22 +11,6 @@ import org.junit.Test;
 
 public class CupTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	  /**
      * Test of throwDice method, of class Cup.
      */
@@ -35,8 +19,6 @@ public class CupTest {
         System.out.println("throwDice");
         Cup instance = new Cup();
         instance.throwDice();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -49,8 +31,6 @@ public class CupTest {
         int expResult = 0;
         int result = instance.getD1Result();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -58,13 +38,10 @@ public class CupTest {
      */
     @Test
     public void testGetD2Result() {
-        System.out.println("getD2Result");
         Cup instance = new Cup();
         int expResult = 0;
         int result = instance.getD2Result();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,14 +49,10 @@ public class CupTest {
      */
     @Test
     public void testGetSum() {
-        System.out.println("getSum");
         Cup instance = new Cup();
-        int expResult = 0;
         int result = instance.getSum();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
-
-}
+        if (result > 12 || result < 2) {
+        	fail("Terningen er ikke begrænset mellem 12 og 2");
+     }
+   }
+} 
