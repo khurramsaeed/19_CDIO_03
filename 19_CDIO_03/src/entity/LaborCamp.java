@@ -28,11 +28,8 @@ public class LaborCamp extends Ownable {
 	 */
 	public int getRent() {
 		GuiBoundary.laborCampButton();
-		
 		c1.throwDice();
-		
 		GUI.setDice(c1.getD1Result(), c1.getD2Result());
-		
 		this.cupSum = c1.getSum();
 
 		int rent = (baseRent * cupSum) * (owner == null ? 0 : super.owner.getQuantityOfLaborCamps());
