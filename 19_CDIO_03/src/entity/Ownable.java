@@ -5,45 +5,57 @@ import desktop_resources.GUI;
 import entity.Player;
 
 public abstract class Ownable extends Field {
-	//Initializing int
+	// Initializing int
 	private int price;
 	// Initializing player object as owner
 	protected Player owner;
 
 	/**
 	 * 
-	 * @param fieldName is same as superclass
-	 * @param price is inherited but value is set locally
+	 * @param fieldName
+	 *            is same as superclass
+	 * @param the
+	 *            inheritance of the class "Field" is specialized in class
+	 *            Ownable, and variable price is added.
 	 */
 	public Ownable(String fieldName, int price) {
 		super(fieldName);
 		this.price = price;
 
 	}
+
 	/**
 	 * Method getPrice
+	 * 
 	 * @return price
 	 */
 	public int getPrice() {
 		return price;
 	}
+
 	/**
 	 * Method getOwner
+	 * 
 	 * @return owner
 	 */
 	private Player getOwner() {
 		return owner;
 	}
+
 	/**
 	 * void method setOwner
+	 * 
 	 * @param newOwner
 	 */
 	private void setOwner(Player newOwner) {
 		owner = newOwner;
 
 	}
+
 	/**
-	 * boolean checkIfOwned checks if a field is owned or not.
+	 * boolean checkIfOwned checks if a field is owned or not/ checks if owner
+	 * == null or otherwise
+	 * 
 	 * @return true or false
 	 */
 	private boolean checkIfOwned() {
@@ -52,18 +64,22 @@ public abstract class Ownable extends Field {
 		else
 			return true;
 	}
+
 	/**
-	 * 
+	 * landOnField method, inherited from the super class. Specialized method
+	 * that defines the operation of landOnField() Lands a player on a field,
+	 * and operate different scenarios, depending on the conditions specified in
+	 * the if-statements
 	 */
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
 
-		if (checkIfOwned() == true && owner.isBankrupt()){
-			GUI.showMessage("This field was owned, but the previous owner is bankrupt, therefor you get the oppurtunity to buy");
+		if (checkIfOwned() == true && owner.isBankrupt()) {
+			GUI.showMessage(
+					"This field was owned, but the previous owner is bankrupt, therefor you get the oppurtunity to buy");
 			setOwner(null);
 		}
-		
-		
+
 		if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
 			System.out.println("pay rent");
 			GuiBoundary.payRent(this.fieldName, owner);
@@ -72,13 +88,14 @@ public abstract class Ownable extends Field {
 
 			if (rent > player.getFortune()) {
 				int remainingFortune = player.getFortune();
-				
+
 				GuiBoundary.bankrupt(getOwner());
 				player.setFortune(-remainingFortune);
 				GUI.setBalance(player.getPlayerName(), player.getFortune());
 				owner.setFortune(remainingFortune);
 				GUI.setBalance(owner.getPlayerName(), owner.getFortune());
-			} else {
+			} 
+			else {
 				player.setFortune(-rent);
 				GUI.setBalance(player.getPlayerName(), player.getFortune());
 				owner.setFortune(rent);
@@ -89,24 +106,26 @@ public abstract class Ownable extends Field {
 		else if (checkIfOwned() != true) {
 			System.out.println("buy option");
 			buyFieldOption(player);
-			
-			
-			}
 
 		}
 
+	}
+
 	/**
 	 * void method buyFieldOption
-	 * @param buyer object of Player
+	 * 
+	 * @param buyer
+	 *            object of Player Method that gives the player the opportunity
+	 *            to buy, in different scenarios.
 	 */
 	private void buyFieldOption(Player buyer) {
-		
-		if(buyer.getFortune() < getPrice()){
+
+		if (buyer.getFortune() < getPrice()) {
 			GuiBoundary.notEnoughMoney();
 		}
 		if (buyer.getFortune() > getPrice()) {
 			boolean buyOption = GuiBoundary.buyFieldButton(fieldName, getPrice());
-	
+
 			if (buyOption == true) {
 				buyer.setFortune(-getPrice());
 				setOwner(buyer);
@@ -117,15 +136,16 @@ public abstract class Ownable extends Field {
 
 		}
 	}
-	
+
 	/**
-	 * public Absrtact getrent method
-	 * return: specialized classes that inherit from Ownable has it's own returns
+	 * public Absrtact getrent method return: each specialized class that
+	 * inherit from Ownable has it's own returns
 	 */
 	public abstract int getRent();
+
 	/**
-	 * public Absrtact setQuantityOfFields method
-	 * return: specialized classes that inherit from Ownable has it's own returns
+	 * Abstract setQuantityOfFields method return: each specialized class that
+	 * inherit from Ownable has it's own returns
 	 */
 	public abstract void setQuantityOfFields(Player player);
 

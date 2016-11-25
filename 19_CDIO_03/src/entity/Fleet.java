@@ -2,7 +2,8 @@ package entity;
 
 public class Fleet extends Ownable {
 
-	// Initializing private int's 
+	// Initializing private int's that function as the different rents of the
+	// field type "fleet"
 	private int Rent_1 = 500;
 	private int Rent_2 = 1000;
 	private int Rent_3 = 2000;
@@ -10,16 +11,18 @@ public class Fleet extends Ownable {
 
 	/**
 	 * 
-	 * @param fieldName is String
-	 * @param price is integer
-	 * Inherits from super (fieldName, price)
+	 * @param fieldName
+	 *            is String
+	 * @param price
+	 *            is integer Inherits from super (fieldName, price)
 	 */
-	public Fleet(String fieldName, int price) { 
+	public Fleet(String fieldName, int price) {
 		super(fieldName, price);
 	}
 
 	/**
 	 * getRent()
+	 * Method that contains a switch statement, that chooses the rent based on the quantity of fleets owned by same owner.
 	 */
 	public int getRent() {
 		switch (super.owner.getQuantityOfFleets()) {
@@ -40,6 +43,7 @@ public class Fleet extends Ownable {
 	@Override
 	/**
 	 * setQuantityofFields()
+	 * Method that makes sure, that one fleet is added to the Players quantityOfFleets
 	 */
 	public void setQuantityOfFields(Player player) {
 		player.setQuantityOfFleets();
