@@ -1,5 +1,6 @@
 package test;
 
+import entity.*;
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -25,10 +26,31 @@ public class TerritoryTest {
 	@After
 	public void tearDown() throws Exception {
 	}
+	 /**
+     * Test of getRent method, of class Territory.
+     */
+    @Test
+    public void testGetRent() {
+        System.out.println("getRent");
+        Territory instance = null;
+        int expResult = 0;
+        int result = instance.getRent();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+    /**
+     * Test of setQuantityOfFields method, of class Territory.
+     */
+    @Test
+    public void testSetQuantityOfFields() {
+        System.out.println("setQuantityOfFields");
+        Player player = null;
+        Territory instance = null;
+        instance.setQuantityOfFields(player);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 
 }

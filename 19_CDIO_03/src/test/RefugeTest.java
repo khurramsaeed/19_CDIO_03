@@ -33,11 +33,46 @@ public class RefugeTest {
 		this.player = new Player("Test Player");
 	}
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
+	  /**
+     * Test of getBonus method, of class Refuge.
+     */
+    @Test
+    public void testGetBonus() {
+        System.out.println("getBonus");
+        Refuge instance = null;
+        int expResult = 0;
+        int result = instance.getBonus();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setBonus method, of class Refuge.
+     */
+    @Test
+    public void testSetBonus() {
+        System.out.println("setBonus");
+        int bonus = 0;
+        Refuge instance = null;
+        instance.setBonus(bonus);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of landOnField method, of class Refuge.
+     */
+    @Test
+    public void testLandOnField() {
+        System.out.println("landOnField");
+        Player player = null;
+        Refuge instance = null;
+        instance.landOnField(player);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
 	
 	
 	
