@@ -5,9 +5,15 @@ import desktop_resources.GUI;
 
 public class Tax extends Field {
 
+	// Initialzing private int's
 	private int taxAmount;
 	private int taxRate;
 
+	/**
+	 * Constructor: public Tax
+	 * @param fieldName is inherited from superclass
+	 * @param taxAmount is equal to global taxAmount
+	 */
 	public Tax(String fieldName, int taxAmount) {
 		super(fieldName);
 		this.taxAmount = taxAmount;
@@ -40,9 +46,11 @@ public class Tax extends Field {
 		}
 
 	}
-
+	/**
+	 * public int getTaxAmount method
+	 * @return taxAmount
+	 */
 	public int getTaxAmount() {
-
 		return taxAmount;
 	}
 }

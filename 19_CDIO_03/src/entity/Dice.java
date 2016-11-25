@@ -10,8 +10,8 @@ public class Dice {
 		this(6);
 	}
 	/**
-	 * 
-	 * @param sides
+	 * Constructor: Dice
+	 * @param sides is equlas to global sides
 	 */
 	public Dice(int sides) {
 		this.sides = sides;

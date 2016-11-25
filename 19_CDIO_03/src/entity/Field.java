@@ -31,6 +31,7 @@ public abstract class Field {
 	
 	/**
 	 * Abstract method landOnField()
+	 * @param player is object from class Player
 	 */
 	public abstract void landOnField(Player player);
 

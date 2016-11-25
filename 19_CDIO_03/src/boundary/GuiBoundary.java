@@ -180,7 +180,7 @@ public class GuiBoundary{
 	}
 	/**
 	 * 
-	 * @param i
+	 * @param i int
 	 * @return GUI.getUserString lets user enter names
 	 */
 	public static String userInputString(int i){
@@ -189,7 +189,7 @@ public class GuiBoundary{
 
 	/**
 	 * 
-	 * @param i
+	 * @param i int
 	 */
 	public static void showFortune(int i){
 		GUI.showMessage("Your fortune contains "  + i);
@@ -204,14 +204,14 @@ public class GuiBoundary{
 	}
 	/**
 	 * 
-	 * @param player
+	 * @param player is object of Player
 	 */
 	public static void winnerMessage(Player player){
 		GUI.showMessage("Everyone is bankrupt except you " + player + ", you won the game! :D");
 	}
 	/**
 	 * 
-	 * @param player
+	 * @param player is object of Player
 	 * @return GUI.getUserButtonPressed display winnerMessage
 	 */
 	public static String exitGame(Player player){
@@ -222,7 +222,7 @@ public class GuiBoundary{
 	//Tax printOuts
 	/**
 	 * 
-	 * @param i
+	 * @param i String
 	 * @return GUI.getUserLeftButtonPressed user message
 	 */
 	public static boolean taxAmountButton(String i){
@@ -232,7 +232,7 @@ public class GuiBoundary{
 	}
 	/**
 	 * 
-	 * @param i
+	 * @param i int
 	 * @return GUI.getUserButtonPressed pay tax message
 	 */
 	public static String taxFixedAmount(int i){
@@ -240,7 +240,7 @@ public class GuiBoundary{
 	}
 	/**
 	 * 
-	 * @param i
+	 * @param i int
 	 * @return GUI.getUserButtonPressed pay tax message 2
 	 */
 	public static String taxTenPercent(int i){
@@ -248,8 +248,8 @@ public class GuiBoundary{
 	}
 	/**
 	 * 
-	 * @param i
-	 * @param j
+	 * @param i String
+	 * @param j int
 	 * @return GUI.getUserButtonPressed user message
 	 */
 	public static String taxGoldMine(String i, int j){
@@ -270,22 +270,22 @@ public class GuiBoundary{
 	//Ownable 
 	/**
 	 * 
-	 * @param i
-	 * @param player
+	 * @param i String
+	 * @param player is object of class Player
 	 */
 	public static void payRent(String i, Player player){
 		GUI.showMessage("The field (" + i + ") is owned, you have to pay rent to " + player);
 	}
 	/**
 	 * 
-	 * @param i
+	 * @param i int
 	 */
 	public static void showRent(int i){
 		GUI.showMessage("The rent to pay is: " + i);
 	}
 	/**
 	 * 
-	 * @param player
+	 * @param player is object of class Player
 	 */
 	public static void bankrupt(Player player){
 		GUI.showMessage("You dont have enough, your are bankrupt! " + player + " gets the rest of your fortune");
@@ -296,8 +296,8 @@ public class GuiBoundary{
 	}
 	/**
 	 * 
-	 * @param i
-	 * @param j
+	 * @param i String
+	 * @param j int
 	 * @return GUI.getUserLeftButtonPressed user message
 	 */
 	public static boolean buyFieldButton(String i, int j){

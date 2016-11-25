@@ -5,10 +5,17 @@ import desktop_resources.GUI;
 
 public class LaborCamp extends Ownable {
 
+	// Initializing private int's
 	private int baseRent;
 	private int cupSum;
+	// Private Cup object
 	private Cup c1 = new Cup();
 
+	/**
+	 * 
+	 * @param fieldName is same as superclass
+	 * @param price is inherited but value is set locally
+	 */
 	public LaborCamp(String fieldName, int price) {
 		super(fieldName, price);
 		this.baseRent = 100;
@@ -16,6 +23,9 @@ public class LaborCamp extends Ownable {
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public int getRent() {
 		GuiBoundary.laborCampButton();
 		
