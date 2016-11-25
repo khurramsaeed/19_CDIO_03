@@ -38,7 +38,7 @@ public class TerritoryTest {
     
   //test of LandOnField, when field is not owned, and player choose to buy
     @Test
-    public void testLandOnFleet() {
+    public void testLandOnTerritory() {
         Territory instance = new Territory("Fleet1", 500, 0);
         Player player = new Player("player1");
         instance.landOnField(player);
