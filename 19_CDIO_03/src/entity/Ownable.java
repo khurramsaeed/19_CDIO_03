@@ -1,5 +1,6 @@
 package entity;
 
+import boundary.GuiBoundary;
 import desktop_resources.GUI;
 import entity.Player;
 
@@ -37,17 +38,22 @@ public abstract class Ownable extends Field {
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
 
+		if (checkIfOwned() == true && owner.isBankrupt()){
+			GUI.showMessage("This field was owned, but the previous owner is bankrupt, therefor you get the oppurtunity to buy");
+			setOwner(null);
+		}
+		
+		
 		if (checkIfOwned() == true && player.getPlayerName() != owner.getPlayerName()) {
 			System.out.println("pay rent");
-			GUI.showMessage("The field (" + this.fieldName + ") is owned, you have to pay rent to " + getOwner());
+			GuiBoundary.payRent(this.fieldName, owner);
 			int rent = getRent();
-			GUI.showMessage("The rent to pay is: " + rent);
+			GuiBoundary.showRent(rent);
 
 			if (rent > player.getFortune()) {
 				int remainingFortune = player.getFortune();
 				
-				GUI.showMessage(
-						"You dont have enough, your are bankrupt! " + getOwner() + " gets the rest of your fortune");
+				GuiBoundary.bankrupt(getOwner());
 				player.setFortune(-remainingFortune);
 				GUI.setBalance(player.getPlayerName(), player.getFortune());
 				owner.setFortune(remainingFortune);
@@ -73,23 +79,20 @@ public abstract class Ownable extends Field {
 	private void buyFieldOption(Player buyer) {
 		
 		if(buyer.getFortune() < getPrice()){
-			GUI.showMessage("The field is not owned, but you dont have enough to buy, SORRY!");
-			}
-		
+			GuiBoundary.notEnoughMoney();
+		}
 		if (buyer.getFortune() > getPrice()) {
-			boolean buyOption = GUI.getUserLeftButtonPressed(
-					"This field (" + fieldName + ") is not owned, do you want to buy it for " + getPrice() + " coins?",
-					"Yes", "No");
+			boolean buyOption = GuiBoundary.buyFieldButton(fieldName, getPrice());
+	
 			if (buyOption == true) {
 				buyer.setFortune(-getPrice());
 				setOwner(buyer);
 				setQuantityOfFields(buyer);
 			} else if (buyOption != true) {
-				GUI.showMessage("You chose not to buy");
+				GuiBoundary.notBought();
 			}
 
 		}
-
 	}
 	
 

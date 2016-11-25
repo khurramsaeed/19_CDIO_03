@@ -1,21 +1,13 @@
 package controller;
 
 import java.awt.Color;
-import java.util.ArrayList;
-
-import desktop_codebehind.Car;
-import desktop_fields.Street;
 import desktop_resources.GUI;
-import entity.Cup;
-import entity.Dice;
 import entity.Field;
 import entity.Fleet;
 import entity.LaborCamp;
-import entity.Player;
 import entity.Refuge;
 import entity.Tax;
 import entity.Territory;
-import entity.Dice;
 
 public class GuiController {
 
