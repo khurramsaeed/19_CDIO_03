@@ -22,6 +22,9 @@ public class Territory extends Ownable {
 	}
 
 	@Override
+	/**
+	 * Method that makes sure, that one Territory is added to the Players quantityOfTerritories
+	 */
 	public void setQuantityOfFields(Player player) {
 		player.setQuantityOfTerritories();
 
