@@ -8,23 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import entity.Player;
+import entity.Tax;
+
 public class TaxTest {
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
 
 	  /**
      * Test of landOnField method, of class Tax.
@@ -32,11 +19,10 @@ public class TaxTest {
     @Test
     public void testLandOnField() {
         System.out.println("landOnField");
-        Player player = null;
-        Tax instance = null;
+        Player player = new Player("TestPlayer");
+        Tax instance = new Tax("TestTax", 1);
         instance.landOnField(player);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -45,12 +31,12 @@ public class TaxTest {
     @Test
     public void testGetTaxAmount() {
         System.out.println("getTaxAmount");
-        Tax instance = null;
-        int expResult = 0;
+        Tax instance = new Tax("TestTax", 1);
+        int expResult = 1;
         int result = instance.getTaxAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+
     }
 
 }
