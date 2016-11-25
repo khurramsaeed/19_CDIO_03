@@ -4,7 +4,7 @@ public class Player {
 	// Initializing objects
 	private String playerName;
 	private Account account;
-	// Intializing private int's
+	// Intializing private ints
 	private int quantityOfFleets;
 	private int quantityOfLaborCamps;
 	private int quantityOfTerritories;
@@ -34,9 +34,9 @@ public class Player {
 		return playerName;
 	}
 
-	// public String toString() {
-	// return playerName;
-	// }
+	 public String toString() {
+	 return playerName;
+	 }
 	/**
 	 * public int getAccountBalance method
 	 * @return account.getBalance()
@@ -46,12 +46,12 @@ public class Player {
 
 	}
 
-	@Override
-	public String toString() {
-		return "Player [playerName=" + playerName + ", account=" + account + ", quantityOfFleets=" + quantityOfFleets + ", quantityOfLaborCamps=" + quantityOfLaborCamps
-				+ ", quantityOfTerritories=" + quantityOfTerritories + ", fortune=" + fortune + ", currentPosition="
-				+ currentPosition + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Player [playerName=" + playerName + ", account=" + account + ", quantityOfFleets=" + quantityOfFleets + ", quantityOfLaborCamps=" + quantityOfLaborCamps
+//				+ ", quantityOfTerritories=" + quantityOfTerritories + ", fortune=" + fortune + ", currentPosition="
+//				+ currentPosition + "]";
+//	}
 	/**
 	 * void setFortune method
 	 * @param value int
