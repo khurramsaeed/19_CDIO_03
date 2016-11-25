@@ -11,47 +11,38 @@ import org.junit.Test;
 
 public class LaborCampTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	  /**
      * Test of getRent method, of class LaborCamp.
      */
-    @Test
-    public void testGetRent() {
-        System.out.println("getRent");
-        LaborCamp instance = null;
-        int expResult = 0;
-        int result = instance.getRent();
+    @Test //test of LandOnField, when field is not owned, and player choose to buy
+    public void testLandOnLaborCamp(){
+
+    	LaborCamp instance = new LaborCamp("LaborCamp1", 700);
+        Player player = new Player("player1");
+        instance.landOnField(player);
+        int expResult = 1;
+        int result = player.getQuantityOfLaborCamps();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        }
+    
+    
+ 
 
     /**
      * Test of setQuantityOfFields method, of class LaborCamp.
      */
     @Test
     public void testSetQuantityOfFields() {
-        System.out.println("setQuantityOfFields");
-        Player player = null;
-        LaborCamp instance = null;
-        instance.setQuantityOfFields(player);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    	  Player player = new Player("Player1");
+    	  LaborCamp instance = new LaborCamp("LaborCamp1", 700);
+          instance.setQuantityOfFields(player);
+          int expResult = 1;
+          int result = player.getQuantityOfLaborCamps();
+          assertEquals(expResult, result);
+       
+    
     }
+    
+    
 
 }

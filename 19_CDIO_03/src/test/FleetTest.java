@@ -11,34 +11,21 @@ import org.junit.Test;
 
 public class FleetTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
 
 	   /**
      * Test of getRent method, of class Fleet.
      */
+	//test of LandOnField, when field is not owned, and player choose to buy
     @Test
-    public void testGetRent() {
-        System.out.println("getRent");
-        Fleet instance = null;
-        int expResult = 0;
-        int result = instance.getRent();
+    public void testLandOnFleet() {
+        Fleet instance = new Fleet("Fleet1", 500);
+        Player player = new Player("player1");
+        instance.landOnField(player);
+        int expResult = 1;
+        int result = player.getQuantityOfFleets();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -46,12 +33,13 @@ public class FleetTest {
      */
     @Test
     public void testSetQuantityOfFields() {
-        System.out.println("setQuantityOfFields");
-        Player player = null;
-        Fleet instance = null;
+        Player player = new Player("Player1");
+        Fleet instance = new Fleet("Fleet2", 500);
         instance.setQuantityOfFields(player);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int expResult = 1;
+        int result = player.getQuantityOfFleets();
+        assertEquals(expResult, result);
+       
     }
 
 }

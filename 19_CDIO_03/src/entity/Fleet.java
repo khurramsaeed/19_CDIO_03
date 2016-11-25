@@ -49,5 +49,9 @@ public class Fleet extends Ownable {
 		player.setQuantityOfFleets();
 
 	}
+	
+	public void setOwner(Player newOwner){
+		newOwner = super.owner;
+	}
 
 }

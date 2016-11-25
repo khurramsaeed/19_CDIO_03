@@ -2,6 +2,7 @@ package test;
 
 import entity.Refuge;
 import entity.Field;
+import entity.Fleet;
 import entity.Player;
 
 import static org.junit.Assert.*;
@@ -33,20 +34,28 @@ public class RefugeTest {
     @Test
     public void testSetBonus() {
         System.out.println("setBonus");
-        int bonus = 0;
+        int bonus = 500;
         Refuge instance = new Refuge("TestRefuge", 1);
         instance.setBonus(bonus);
+        int expResult = 500;
+        int result = instance.getBonus();
+        assertEquals(expResult, result);
+        
     }
 
     /**
      * Test of landOnField method, of class Refuge.
      */
+  //test of LandOnField of refuge, that bonus enters players account
     @Test
-    public void testLandOnField() {
-        System.out.println("landOnField");
-        Player player = new Player("TestPlayer");
-        Refuge instance = new Refuge("TestRefuge", 1);
+    public void testLandOnRefuge() {
+        Refuge instance = new Refuge("Refuge1", 500);
+        Player player = new Player("player1");
         instance.landOnField(player);
+        int expResult = 30500;
+        int result = player.getFortune();
+        assertEquals(expResult, result);
+       
     }
     
 	

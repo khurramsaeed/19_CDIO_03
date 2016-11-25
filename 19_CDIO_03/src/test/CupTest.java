@@ -11,26 +11,18 @@ import org.junit.Test;
 
 public class CupTest {
 
-	  /**
-     * Test of throwDice method, of class Cup.
-     */
-    @Test
-    public void testThrowDice() {
-        System.out.println("throwDice");
-        Cup instance = new Cup();
-        instance.throwDice();
-    }
-
     /**
      * Test of getD1Result method, of class Cup.
      */
     @Test
-    public void testGetD1Result() {
-        System.out.println("getD1Result");
-        Cup instance = new Cup();
-        int expResult = 0;
-        int result = instance.getD1Result();
-        assertEquals(expResult, result);
+    public void testGetD1Result() { 
+    	Cup instance = new Cup();
+    	instance.throwDice();
+    	int result = instance.getD1Result();
+
+    	if(result > 6 || result < 1){
+    		fail("Dice does not have 6 sides");	
+    	}
     }
 
     /**
@@ -39,9 +31,12 @@ public class CupTest {
     @Test
     public void testGetD2Result() {
         Cup instance = new Cup();
-        int expResult = 0;
+        instance.throwDice();
         int result = instance.getD2Result();
-        assertEquals(expResult, result);
+
+        if(result > 6 || result < 1){
+        fail("Dice does not have 6 sides");	
+        }
     }
 
     /**

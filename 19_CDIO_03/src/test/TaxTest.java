@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import entity.Player;
+import entity.Refuge;
 import entity.Tax;
 
 public class TaxTest {
@@ -16,12 +17,16 @@ public class TaxTest {
 	  /**
      * Test of landOnField method, of class Tax.
      */
+	
+	//test of LandOnField of TAX, that taxAmount is withdrawn from players account
     @Test
     public void testLandOnField() {
-        System.out.println("landOnField");
-        Player player = new Player("TestPlayer");
-        Tax instance = new Tax("TestTax", 1);
+        Tax instance = new Tax("Refuge1", 500);
+        Player player = new Player("player1");
         instance.landOnField(player);
+        int expResult = 29500;
+        int result = player.getFortune();
+        assertEquals(expResult, result);
 
     }
 
@@ -30,7 +35,6 @@ public class TaxTest {
      */
     @Test
     public void testGetTaxAmount() {
-        System.out.println("getTaxAmount");
         Tax instance = new Tax("TestTax", 1);
         int expResult = 1;
         int result = instance.getTaxAmount();

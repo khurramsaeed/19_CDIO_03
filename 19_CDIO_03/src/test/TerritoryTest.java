@@ -17,8 +17,8 @@ public class TerritoryTest {
     @Test
     public void testGetRent() {
         System.out.println("getRent");
-        Territory instance = new Territory("TestTerritory", 1, 1);
-        int expResult = 1;
+        Territory instance = new Territory("TestTerritory", 1, 100);
+        int expResult = 100;
         int result = instance.getRent();
         assertEquals(expResult, result);
     }
@@ -28,13 +28,24 @@ public class TerritoryTest {
      */
     @Test
     public void testSetQuantityOfFields() {
-        System.out.println("setQuantityOfFields");
         Player player = new Player("TestPlayer");
-        Territory instance = new Territory("TestTerritory", 1, 1);
+        Territory instance = new Territory("TestTerritory", 10, 100);
         instance.setQuantityOfFields(player);
-        int expResult = player.getQuantityOfTerritories();
-        int result = 1;
+        int expResult = 1;
+        int result = player.getQuantityOfTerritories();
         assertEquals(expResult, result);
+    }
+    
+  //test of LandOnField, when field is not owned, and player choose to buy
+    @Test
+    public void testLandOnFleet() {
+        Territory instance = new Territory("Fleet1", 500, 0);
+        Player player = new Player("player1");
+        instance.landOnField(player);
+        int expResult = 1;
+        int result = player.getQuantityOfTerritories();
+        assertEquals(expResult, result);
+       
     }
 
 }
