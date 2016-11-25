@@ -7,11 +7,12 @@ import desktop_resources.GUI;
 import entity.*;
 
 public class GameController {
+	// Initializing class objects
 	private GameBoard gb = new GameBoard();
-
 	private Cup cup = new Cup();
 	private ArrayList<Player> playerList = new ArrayList<Player>();
 	private GuiBoundary GUIb = new GuiBoundary();
+	// Initializing variables
 	private int bankRuptPlayers;
 	private boolean noWinner;
 
@@ -25,7 +26,7 @@ public class GameController {
 		playRound();
 
 	}
-
+	
 	private void addPlayer() {
 		String chooseNumberOfPlayers = GuiBoundary.numberOfPlayers();
 		int NumberOfPlayers = Integer.parseInt(chooseNumberOfPlayers);
@@ -41,7 +42,6 @@ public class GameController {
 		}
 	}
 
-	
 	private void playRound() {
 
 		while (noWinner = true) {
