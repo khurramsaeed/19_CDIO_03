@@ -1,9 +1,11 @@
 package entity;
 
-import java.util.ArrayList;
-
 public class GameBoard {
 
+	/*
+	 * Private fields array refers to original class Field
+	 * Allocates 22 elements of Field objects in the array
+	 */
 	private Field[] fields = new Field[22];
 
 	public GameBoard() {
@@ -32,12 +34,18 @@ public class GameBoard {
 
 	}
 
-	
-
+	/**
+	 * Field Array
+	 * @return fields
+	 */
 	public Field[] getFields() {
 		return fields;
 	}
 
+	/**
+	 * landOnField method
+	 * @param player to get players currentPosition
+	 */
 	public void landOnField(Player player) {
 		fields[player.getCurrentPosition()].landOnField(player);
 	}

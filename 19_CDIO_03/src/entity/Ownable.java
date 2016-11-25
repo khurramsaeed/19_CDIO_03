@@ -5,36 +5,56 @@ import desktop_resources.GUI;
 import entity.Player;
 
 public abstract class Ownable extends Field {
-
+	//Initializing int
 	private int price;
+	// Initializing player object as owner
 	protected Player owner;
 
+	/**
+	 * 
+	 * @param fieldName is same as superclass
+	 * @param price is inherited but value is set locally
+	 */
 	public Ownable(String fieldName, int price) {
 		super(fieldName);
 		this.price = price;
 
 	}
-
+	/**
+	 * Method getPrice
+	 * @return price
+	 */
 	public int getPrice() {
 		return price;
 	}
-
+	/**
+	 * Method getOwner
+	 * @return owner
+	 */
 	private Player getOwner() {
 		return owner;
 	}
-
+	/**
+	 * void method setOwner
+	 * @param newOwner
+	 */
 	private void setOwner(Player newOwner) {
 		owner = newOwner;
 
 	}
-
+	/**
+	 * boolean checkIfOwned checks if a field is owned or not.
+	 * @return true or false
+	 */
 	private boolean checkIfOwned() {
 		if (owner == null)
 			return false;
 		else
 			return true;
 	}
-
+	/**
+	 * 
+	 */
 	public void landOnField(Player player) {
 		// TODO Auto-generated method stub
 
@@ -75,7 +95,10 @@ public abstract class Ownable extends Field {
 
 		}
 
-	
+	/**
+	 * void method buyFieldOption
+	 * @param buyer object of Player
+	 */
 	private void buyFieldOption(Player buyer) {
 		
 		if(buyer.getFortune() < getPrice()){
@@ -95,9 +118,15 @@ public abstract class Ownable extends Field {
 		}
 	}
 	
-
+	/**
+	 * public Absrtact getrent method
+	 * return: specialized classes that inherit from Ownable has it's own returns
+	 */
 	public abstract int getRent();
-
+	/**
+	 * public Absrtact setQuantityOfFields method
+	 * return: specialized classes that inherit from Ownable has it's own returns
+	 */
 	public abstract void setQuantityOfFields(Player player);
 
 }

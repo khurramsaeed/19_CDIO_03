@@ -7,12 +7,12 @@ import desktop_resources.GUI;
 import entity.*;
 
 public class GameController {
+	// Initializing class objects
 	private GameBoard gb = new GameBoard();
-
 	private Cup cup = new Cup();
-	private GuiController guiC = new GuiController();
 	private ArrayList<Player> playerList = new ArrayList<Player>();
-	private GuiController gc = new GuiController();
+	private GuiBoundary GUIb = new GuiBoundary();
+	// Initializing variables
 	private int bankRuptPlayers;
 	private boolean noWinner;
 
@@ -21,12 +21,12 @@ public class GameController {
 	}
 
 	public void startGame() {
-		gc.GUIField(gb.getFields());
+		GUIb.GUIField(gb.getFields());
 		addPlayer();
 		playRound();
 
 	}
-
+	
 	private void addPlayer() {
 		String chooseNumberOfPlayers = GuiBoundary.numberOfPlayers();
 		int NumberOfPlayers = Integer.parseInt(chooseNumberOfPlayers);
@@ -35,14 +35,13 @@ public class GameController {
 
 			GuiBoundary.showFortune(playerList.get(i).getFortune());
 			Car[] cars = new Car[NumberOfPlayers];
-			cars[i] = new Car.Builder().typeRacecar().primaryColor(guiC.chooseColor(i)).build();
+			cars[i] = new Car.Builder().typeRacecar().primaryColor(GUIb.chooseColor(i)).build();
 
 			GUI.addPlayer(playerList.get(i).getPlayerName(), playerList.get(i).getFortune(), cars[i]);
 
 		}
 	}
 
-	
 	private void playRound() {
 
 		while (noWinner = true) {
