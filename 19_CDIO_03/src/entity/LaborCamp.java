@@ -24,21 +24,21 @@ public class LaborCamp extends Ownable {
 
 	@Override
 	/**
-	 * 
+	 * getRent method that chooses the rent to pay, based one a extra throw of the dice
 	 */
 	public int getRent() {
 		GuiBoundary.laborCampButton();
-		
 		c1.throwDice();
-		
 		GUI.setDice(c1.getD1Result(), c1.getD2Result());
-		
 		this.cupSum = c1.getSum();
 
 		int rent = (baseRent * cupSum) * (owner == null ? 0 : super.owner.getQuantityOfLaborCamps());
 		return rent;
 	}
-
+	
+	/**
+	 * Method that makes sure, that one Territory is added to the Players quantityOfTerritories
+	 */
 	@Override
 	public void setQuantityOfFields(Player player) {
 		player.setQuantityOfLaborCamps();

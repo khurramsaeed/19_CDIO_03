@@ -25,4 +25,7 @@ public class Dice {
 		this.facevalue = (int) (Math.random() * sides) + 1;
 	}
 
+	public int RollValue(){
+		return facevalue;
+	}
 }
