@@ -51,6 +51,10 @@ public abstract class Ownable extends Field {
 		owner = newOwner;
 
 	}
+	
+	public  String toString(){
+		return "Ownable field, Name: "+this.fieldName + ", Price:"+getPrice();
+	}
 
 	/**
 	 * boolean checkIfOwned checks if a field is owned or not/ checks if owner

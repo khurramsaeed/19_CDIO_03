@@ -26,7 +26,7 @@ public abstract class Field {
 	 * toString method
 	 */
 	public String toString() {
-		return fieldName;
+		return "Name: "+fieldName;
 	}
 	
 	/**

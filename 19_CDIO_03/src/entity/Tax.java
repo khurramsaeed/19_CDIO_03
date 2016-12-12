@@ -22,6 +22,11 @@ public class Tax extends Field {
 		this.taxAmount = taxAmount;
 
 	}
+	
+	public String toString(){
+		return "Tax field, Name: "+this.fieldName + ", Tax: "+ getTaxAmount();
+		
+	}
 
 	/**
 	 * landOnField method, inherited from the super class. Specialized method

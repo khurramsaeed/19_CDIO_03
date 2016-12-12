@@ -37,6 +37,10 @@ public class Refuge extends Field {
 	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
+	
+	public String toString(){
+		return "Refuge field, Name: "+ this.fieldName +", Bonus: "+ getBonus();
+	}
 
 	/**
 	 * landOnField method, inherited from the super class. Specialized method
