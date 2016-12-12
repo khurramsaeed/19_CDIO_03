@@ -37,11 +37,6 @@ public class Launch {
 				System.out.println("Dit kast: " + values[0] + " og " + values[1]);
 				int sum = values[0] + values [1];
 				tgb.landOnField(testPlayer, sum);
-//				fc.throwDice();
-//				int sum = fc.getSum();
-				
-//				tgb.landOnField(testPlayer, sum);
-				
 			}
 			
 		}
