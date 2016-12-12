@@ -5,6 +5,8 @@ public class Cup {
 	private Dice d1;
 	private Dice d2;
 	
+	int number = 2;
+	
 	public Cup() {
 
 		this.d1 = new Dice();
@@ -41,5 +43,12 @@ public class Cup {
 		return getD1Result() + getD2Result();
 
 	}
-
+	
+	public int[] testDvalue(){
+		int[] results = new int[number];
+        for (int i = 0; i < 2; i++) {
+        	results[i] = d1.getFaceValue() + d2.getFaceValue();   
+        }
+        return results;
+	}
 }

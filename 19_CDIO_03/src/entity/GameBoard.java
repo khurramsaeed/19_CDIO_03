@@ -42,6 +42,10 @@ public class GameBoard {
 		return fields;
 	}
 
+	public Field getFieldIndex(int sum) {
+		return fields[sum];
+	}
+	
 	/**
 	 * landOnField method
 	 * @param player to get players currentPosition

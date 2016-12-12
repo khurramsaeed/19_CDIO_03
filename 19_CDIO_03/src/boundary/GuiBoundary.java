@@ -138,18 +138,20 @@ public class GuiBoundary{
 
 	public Color chooseColor(int NumberOfPlayers) {
 		switch (NumberOfPlayers) {
-		case 1:
+		case 0:
 			return Color.BLACK;
-		case 2:
+		case 1:
 			return Color.CYAN;
-		case 3:
+		case 2:
 			return Color.RED;
-		case 4:
+		case 3:
 			return Color.GREEN;
-		case 5:
+		case 4:
 			return Color.YELLOW;
+		case 5:
+			return Color.ORANGE;
 		default:
-			return Color.PINK;
+			return Color.pink;
 		}
 	}
 	

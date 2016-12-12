@@ -33,12 +33,12 @@ public class GameController {
 	private void addPlayer() {
 		String chooseNumberOfPlayers = GuiBoundary.numberOfPlayers();
 		int NumberOfPlayers = Integer.parseInt(chooseNumberOfPlayers);
+		// Allocates x number of cars in an array, shown in the GUI.
+		Car[] cars = new Car[NumberOfPlayers];
 		for (int i = 0; i < NumberOfPlayers; i++) {
 			playerList.add(new Player(GuiBoundary.userInputString(i)));
 			GuiBoundary.showFortune(playerList.get(i).getFortune());
-
-			// Allocates x number of cars in an array, shown in the GUI.
-			Car[] cars = new Car[NumberOfPlayers];
+			
 			cars[i] = new Car.Builder().typeRacecar().primaryColor(GUIb.chooseColor(i)).build();
 			GUI.addPlayer(playerList.get(i).getPlayerName(), playerList.get(i).getFortune(), cars[i]);
 
